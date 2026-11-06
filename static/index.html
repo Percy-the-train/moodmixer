@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MoodMixer &middot; Drink Matched to Your Mood</title>
+<style>
+  :root {
+    --bg: #241811;
+    --bg2: #3a2417;
+    --cream: #f7ecdd;
+    --cream2: #f1e0c8;
+    --paper: #fffaf2;
+    --brown: #3d2a1c;
+    --brown-soft: #7a5c44;
+    --caramel: #c8832b;
+    --amber: #e6a020;
+    --amber2: #b96a1f;
+    --line: #e4d2b4;
+    --track: #e7d8bd;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Georgia", "Palatino Linotype", "Book Antiqua", -apple-system, "Segoe UI", serif;
+    background:
+      radial-gradient(1200px 700px at 50% -12%, #4a2f1c 0%, var(--bg) 60%),
+      linear-gradient(180deg, var(--bg), var(--bg2));
+    color: var(--brown);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 44px 20px 60px;
+  }
+  .hero { text-align: center; }
+  .glass-icon { width: 64px; height: 64px; margin-bottom: 6px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35)); }
+  h1 {
+    font-size: 2.2rem;
+    margin: 0 0 6px;
+    color: var(--cream);
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  }
+  .subtitle { color: #d9b98c; margin: 0 0 30px; font-size: 0.98rem; font-style: italic; }
+  .panel {
+    background: linear-gradient(180deg, var(--paper), var(--cream));
+    border: 1px solid #e0c9a4;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 620px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; }
+  button {
+    flex: 1 1 180px;
+    padding: 14px 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fdf6e9;
+    color: var(--brown);
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.05s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  button:hover { border-color: var(--caramel); box-shadow: 0 4px 14px rgba(200, 131, 43, 0.25); }
+  button:active { transform: scale(0.98); }
+  button.primary {
+    background: linear-gradient(120deg, var(--amber), var(--amber2));
+    border: none;
+    color: #fff8ec;
+  }
+  button.recording { background: #c2492c; border-color: #c2492c; color: #fff8ec; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .timer { margin-top: 14px; text-align: center; font-variant-numeric: tabular-nums; color: var(--brown-soft); min-height: 1.3em; }
+  audio { width: 100%; margin-top: 18px; display: none; }
+  audio.show { display: block; }
+  .status {
+    margin-top: 16px;
+    text-align: center;
+    color: var(--brown-soft);
+    min-height: 1.3em;
+    font-size: 0.9rem;
+  }
+  .results { margin-top: 24px; }
+  .drink-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(120deg, #f7e7cc, #f0d9b4);
+    border: 1px solid #e0c9a4;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 22px;
+  }
+  .drink-glass { width: 58px; height: 58px; flex-shrink: 0; }
+  .drink-text .drink-kicker { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--brown-soft); }
+  .drink-text .drink-name { font-size: 1.35rem; font-weight: 700; margin: 2px 0; }
+  .drink-text .drink-desc { font-size: 0.9rem; color: var(--brown-soft); font-style: italic; }
+  .recipe { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .chip {
+    font-size: 0.8rem;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #fffaf2;
+    border: 1px solid #e0c9a4;
+    border-radius: 999px;
+    padding: 3px 11px;
+    color: var(--brown);
+  }
+  .chip b { font-weight: 700; }
+  .mood-line { text-align: center; margin-bottom: 18px; }
+  .mood-line .mood { font-size: 1.5rem; font-weight: 700; text-transform: capitalize; }
+  .mood-line .conf { color: var(--brown-soft); font-size: 0.9rem; }
+  .bar-row { margin-bottom: 13px; }
+  .bar-meta { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px; text-transform: capitalize; }
+  .bar-meta .pct { color: var(--brown-soft); font-variant-numeric: tabular-nums; }
+  .bar-track { background: var(--track); height: 11px; border-radius: 7px; overflow: hidden; }
+  .bar-fill {
+    height: 100%;
+    border-radius: 7px;
+    width: 0;
+    transition: width 0.5s ease;
+  }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <svg class="glass-icon" viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M9 12 L55 12 L32 42 Z" fill="#e6a020" stroke="#b96a1f" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M9 12 L55 12 L54 16 L10 16 Z" fill="#f4d08a"/>
+      <line x1="32" y1="42" x2="32" y2="54" stroke="#c98d4b" stroke-width="3"/>
+      <line x1="23" y1="57" x2="41" y2="57" stroke="#c98d4b" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="32" cy="42" r="2.5" fill="#c2492c"/>
+    </svg>
+    <h1>MoodMixer</h1>
+    <p class="subtitle">Say how you feel &middot; we&rsquo;ll pour the right drink</p>
+  </div>
+
+  <div class="panel">
+    <div class="controls">
+      <button id="uploadBtn" class="primary">Upload a Voice Clip</button>
+      <button id="recordBtn">Speak to the Bar</button>
+    </div>
+    <input type="file" id="fileInput" accept="audio/*" class="hidden" />
+
+    <div class="timer" id="timer"></div>
+    <audio id="player" controls></audio>
+    <div class="status" id="status"></div>
+
+    <div class="results hidden" id="results">
+      <div class="mood-line">
+        <div class="mood" id="moodLabel"></div>
+        <div class="conf" id="moodConf"></div>
+      </div>
+      <div class="drink-card">
+        <svg class="drink-glass" id="drinkGlass" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M12 10 L52 10 L32 40 Z" fill="currentColor" stroke="#b96a1f" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M12 10 L52 10 L51 14 L13 14 Z" fill="#f7e6c4"/>
+          <line x1="32" y1="40" x2="32" y2="53" stroke="#c98d4b" stroke-width="3"/>
+          <line x1="24" y1="56" x2="40" y2="56" stroke="#c98d4b" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="32" cy="42" r="2.5" fill="#fff" opacity="0.7"/>
+        </svg>
+        <div class="drink-text">
+          <div class="drink-kicker">Recommended pour</div>
+          <div class="drink-name" id="drinkName"></div>
+          <div class="drink-desc" id="drinkDesc"></div>
+          <div class="recipe" id="drinkRecipe"></div>
+        </div>
+      </div>
+      <div id="bars"></div>
+    </div>
+  </div>
+
+<script>
+const uploadBtn = document.getElementById("uploadBtn");
+const recordBtn = document.getElementById("recordBtn");
+const fileInput = document.getElementById("fileInput");
+const player = document.getElementById("player");
+const statusEl = document.getElementById("status");
+const timerEl = document.getElementById("timer");
+const resultsEl = document.getElementById("results");
+const moodLabel = document.getElementById("moodLabel");
+const moodConf = document.getElementById("moodConf");
+const drinkGlass = document.getElementById("drinkGlass");
+const drinkName = document.getElementById("drinkName");
+const drinkDesc = document.getElementById("drinkDesc");
+const drinkRecipe = document.getElementById("drinkRecipe");
+const barsEl = document.getElementById("bars");
+
+const INGREDIENTS = {
+  black: "錫蘭紅茶",
+  green: "茉莉綠茶",
+  syrup: "蔗糖漿",
+  milk: "鮮奶"
+};
+
+const RECIPES = {
+  happy: {
+    name: "焦糖鮮奶茶",
+    desc: "甜蜜上揚，配一杯香甜順口。",
+    color: "#e6a020",
+    parts: { black: 180, milk: 100, syrup: 20 }
+  },
+  sad: {
+    name: "暖心鮮奶綠",
+    desc: "溫潤奶香，輕輕撫慰低落。",
+    color: "#c89b6b",
+    parts: { green: 160, milk: 130, syrup: 10 }
+  },
+  angry: {
+    name: "清心茉莉綠",
+    desc: "清涼降火，緩一緩情緒。",
+    color: "#7aa86a",
+    parts: { green: 300 }
+  },
+  neutral: {
+    name: "經典錫蘭紅",
+    desc: "原味純粹，剛剛好。",
+    color: "#a05a32",
+    parts: { black: 300 }
+  }
+};
+
+const EMOTION_COLORS = {
+  happy: "#e6a020",
+  sad:   "#c89b6b",
+  angry: "#7aa86a",
+  neutral: "#a05a32"
+};
+
+let mediaRecorder = null;
+let stream = null;
+let chunks = [];
+let timerInterval = null;
+let recordStart = 0;
+
+function setStatus(text) {
+  statusEl.textContent = text;
+}
+
+function showResults(predictions) {
+  const top = predictions[0];
+  moodLabel.textContent = top.emotion;
+  moodConf.textContent = (top.score * 100).toFixed(1) + "% confidence";
+
+  const drink = RECIPES[top.emotion] || RECIPES.neutral;
+  drinkGlass.style.color = drink.color;
+  drinkName.textContent = drink.name;
+  drinkDesc.textContent = drink.desc;
+
+  drinkRecipe.innerHTML = "";
+  Object.entries(drink.parts).forEach(([key, ml]) => {
+    const chip = document.createElement("span");
+    chip.className = "chip";
+    chip.textContent = INGREDIENTS[key] + " ";
+    const amount = document.createElement("b");
+    amount.textContent = ml + "ml";
+    chip.appendChild(amount);
+    drinkRecipe.appendChild(chip);
+  });
+
+  barsEl.innerHTML = "";
+  predictions.forEach(p => {
+    const color = EMOTION_COLORS[p.emotion] || "#c8832b";
+    const row = document.createElement("div");
+    row.className = "bar-row";
+    const meta = document.createElement("div");
+    meta.className = "bar-meta";
+    const name = document.createElement("span");
+    name.textContent = p.emotion;
+    const pct = document.createElement("span");
+    pct.className = "pct";
+    pct.textContent = (p.score * 100).toFixed(1) + "%";
+    meta.appendChild(name);
+    meta.appendChild(pct);
+    const track = document.createElement("div");
+    track.className = "bar-track";
+    const fill = document.createElement("div");
+    fill.className = "bar-fill";
+    fill.style.background = "linear-gradient(90deg, " + color + ", " + color + "cc)";
+    track.appendChild(fill);
+    row.appendChild(meta);
+    row.appendChild(track);
+    barsEl.appendChild(row);
+    requestAnimationFrame(() => { fill.style.width = (p.score * 100).toFixed(1) + "%"; });
+  });
+  resultsEl.classList.remove("hidden");
+}
+
+async function sendForPrediction(blob, filename) {
+  setStatus("Listening to the mood...");
+  const formData = new FormData();
+  formData.append("file", blob, filename);
+  try {
+    const resp = await fetch("/predict", { method: "POST", body: formData });
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({}));
+      throw new Error(err.detail || "Prediction failed");
+    }
+    const data = await resp.json();
+    showResults(data.predictions);
+    setStatus("Mood read. Enjoy your drink.");
+  } catch (e) {
+    setStatus("Error: " + e.message);
+  }
+}
+
+uploadBtn.addEventListener("click", () => fileInput.click());
+
+fileInput.addEventListener("change", () => {
+  const file = fileInput.files[0];
+  if (!file) return;
+  const url = URL.createObjectURL(file);
+  player.src = url;
+  player.classList.add("show");
+  sendForPrediction(file, file.name);
+});
+
+function startTimer() {
+  recordStart = Date.now();
+  timerInterval = setInterval(() => {
+    const secs = Math.floor((Date.now() - recordStart) / 1000);
+    timerEl.textContent = "Listening " + secs + "s";
+  }, 200);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+  timerEl.textContent = "";
+}
+
+function resample(samples, fromRate, toRate) {
+  const ratio = toRate / fromRate;
+  const newLength = Math.round(samples.length * ratio);
+  const result = new Float32Array(newLength);
+  for (let i = 0; i < newLength; i++) {
+    const src = i / ratio;
+    const i0 = Math.floor(src);
+    const i1 = Math.min(i0 + 1, samples.length - 1);
+    const frac = src - i0;
+    result[i] = samples[i0] * (1 - frac) + samples[i1] * frac;
+  }
+  return result;
+}
+
+function encodeWav(samples, sampleRate) {
+  const buffer = new ArrayBuffer(44 + samples.length * 2);
+  const view = new DataView(buffer);
+  const writeString = (offset, str) => {
+    for (let i = 0; i < str.length; i++) view.setUint8(offset + i, str.charCodeAt(i));
+  };
+  writeString(0, "RIFF");
+  view.setUint32(4, 36 + samples.length * 2, true);
+  writeString(8, "WAVE");
+  writeString(12, "fmt ");
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);
+  view.setUint16(22, 1, true);
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, sampleRate * 2, true);
+  view.setUint16(32, 2, true);
+  view.setUint16(34, 16, true);
+  writeString(36, "data");
+  view.setUint32(40, samples.length * 2, true);
+  let offset = 44;
+  for (let i = 0; i < samples.length; i++) {
+    const s = Math.max(-1, Math.min(1, samples[i]));
+    view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+    offset += 2;
+  }
+  return new Blob([buffer], { type: "audio/wav" });
+}
+
+recordBtn.addEventListener("click", async () => {
+  if (mediaRecorder && mediaRecorder.state === "recording") {
+    mediaRecorder.stop();
+    return;
+  }
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    mediaRecorder = new MediaRecorder(stream);
+    chunks = [];
+    mediaRecorder.ondataavailable = e => chunks.push(e.data);
+    mediaRecorder.onstop = async () => {
+      stream.getTracks().forEach(t => t.stop());
+      recordBtn.classList.remove("recording");
+      recordBtn.textContent = "Speak to the Bar";
+      uploadBtn.disabled = false;
+      stopTimer();
+      const blob = new Blob(chunks, { type: mediaRecorder.mimeType });
+      const playerUrl = URL.createObjectURL(blob);
+      player.src = playerUrl;
+      player.classList.add("show");
+      try {
+        const arrayBuffer = await blob.arrayBuffer();
+        const audioCtx = new AudioContext();
+        const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+        const channel = audioBuffer.getChannelData(0);
+        const resampled = resample(channel, audioBuffer.sampleRate, 16000);
+        const wav = encodeWav(resampled, 16000);
+        await sendForPrediction(wav, "recording.wav");
+      } catch (e) {
+        setStatus("Error decoding recording: " + e.message);
+      }
+    };
+    mediaRecorder.start();
+    recordBtn.classList.add("recording");
+    recordBtn.textContent = "Stop Listening";
+    uploadBtn.disabled = true;
+    setStatus("");
+    startTimer();
+  } catch (e) {
+    setStatus("Microphone access denied: " + e.message);
+  }
+});
+</script>
+</body>
+</html>
