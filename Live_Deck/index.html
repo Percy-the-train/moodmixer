@@ -127,9 +127,21 @@
   .drink-row:last-child{border-bottom:0}
   .drink-row .dn{font-family:var(--serif-en);font-weight:600;font-size:max(14px,1.06vw);line-height:1.15}
   .drink-row .dr{font-family:var(--mono);font-size:max(10px,.72vw);opacity:.72;letter-spacing:.03em;line-height:1.35}
+  /* ============ 数据表（tables） ============ */
+  .tbl{display:grid;gap:0;width:100%}
+  .tbl .tr{display:grid;border-top:1px solid rgba(127,127,127,.22);padding:1.1vh 0;align-items:center;gap:1vw}
+  .tbl .tr:last-child{border-bottom:1px solid rgba(127,127,127,.22)}
+  .tbl .th{font-family:var(--mono);font-size:max(10px,.78vw);letter-spacing:.2em;text-transform:uppercase;opacity:.55;padding-bottom:.6vh}
+  .tbl .c1{font-family:var(--serif-zh);font-weight:600}
+  .tbl .v{font-family:var(--sans-zh);opacity:.85}
+  .tbl .m{font-family:var(--mono);font-size:max(10px,.78vw);opacity:.6;text-align:right;justify-self:end}
+  .tbl.compact .tr{padding:.45vh 0}
+  .tbl.compact .c1,.tbl.compact .v{font-size:max(12px,.9vw)}
+  .tbl.tiny .tr{padding:.4vh 0}
+  .tbl.tiny .c1,.tbl.tiny .v,.tbl.tiny .m{font-size:max(11px,.78vw)}
 
   /* ============ Rowline（表格行） ============ */
-  .rowline{display:grid;grid-template-columns:1fr 2fr 1fr;gap:2vw;padding:2.2vh 0;border-top:1px solid currentColor;align-items:center;border-color:rgba(127,127,127,.25)}
+  .rowline{display:grid;grid-template-columns:1fr 2fr 1fr;gap:2vw;padding:1.8vh 0;border-top:1px solid currentColor;align-items:center;border-color:rgba(127,127,127,.25)}
   .rowline:last-child{border-bottom:1px solid currentColor;border-color:rgba(127,127,127,.25)}
   .rowline .k{font-family:var(--serif-zh);font-weight:700;font-size:1.7vw}
   .rowline .v{font-family:var(--sans-zh);font-weight:400;font-size:max(14px,1.2vw);opacity:.85;line-height:1.55}
@@ -601,333 +613,998 @@
   <div class="video-scrim" aria-hidden="true"></div>
 
   <div class="chrome">
-    <div>sip. · Four Pumps, One Good Cup</div>
-    <div>2026</div>
+    <div>INT4089 · Group Project · 2026-27S1</div>
+    <div>27 NOV 2026</div>
   </div>
 
   <div class="cover-side">
-    <div class="kicker" data-anim>LingLam 3D · Demo Deck</div>
+    <div class="kicker" data-anim>Eric Gong · Group Project</div>
     <h1 class="h-hero h-hero-en cover-title" data-anim>sip.</h1>
-    <h2 class="cover-sub" data-anim>Four pumps. One good cup.</h2>
-    <p class="cover-lead" data-anim>Twenty house drinks from four pumps — coffee, milk, black tea and coconut water. Every cup is 150 ml, mixed to order.</p>
+    <h2 class="cover-sub" data-anim>A four-pump drink machine, designed like a system.</h2>
+    <p class="cover-lead" data-anim>From a short campus break to a 75 ml controlled experiment. Order from your phone; watch the cup build itself.</p>
     <div class="meta-row" data-anim>
-      <span>20 drinks</span><span>·</span><span>4 pumps</span><span>·</span><span>150 ml every cup</span>
+      <span>Live demo · scan · build · order</span><span>·</span><span>10–15 min</span><span>·</span><span>eric-gong.com/sip</span>
     </div>
   </div>
 
   <div class="foot">
-    <div>sip. · Four pumps, one good cup</div>
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;opacity:.55;max-width:80ch;text-transform:uppercase">AI declaration: Claude (Anthropic) supported brainstorming and readability. The group reviewed, edited and accepts responsibility for all content.</div>
     <div>— 2026 —</div>
   </div>
 </section>
 
-<!-- ============ 02 · THE WORLD TODAY ============ -->
-<section class="slide light menu-bg" data-animate="quote" data-slide-id="the-world">
-  <div class="menu-bg-layer" aria-hidden="true"></div>
-  <div class="menu-bg-scrim" aria-hidden="true"></div>
+<!-- ============ 02 · TRY IT BEFORE WE BEGIN ============ -->
+<section class="slide light" data-slide-id="try-first">
   <div class="chrome">
-    <div>The World Today · Context</div>
-    <div>02 / 10</div>
+    <div>Try It Before We Begin</div>
+    <div>02 / 27</div>
   </div>
-  <div class="frame" style="display:grid;gap:3.4vh;align-content:center;min-height:80vh">
-    <div class="kicker" data-anim>The World Today</div>
-    <blockquote style="font-family:var(--serif-en);font-weight:600;font-size:min(5.2vw,9vh);line-height:1.1;letter-spacing:-.02em;max-width:82vw">
-      <span data-anim="line" style="display:block">Everyone ends the day the same way.</span>
-      <span data-anim="line" style="display:block;font-style:italic;opacity:.68">Tired. Thirsty. Bored of the same fixed drinks.</span>
-    </blockquote>
-    <p class="lead" style="max-width:56ch;opacity:.8;margin-top:1vh" data-anim>After a long day, people want a drink that feels like theirs — not the same three cans, not the same preset menu, not a machine that only pours what it has.</p>
-    <div class="meta-row" data-anim><span>tired</span><span>·</span><span>thirsty</span><span>·</span><span>fixed drinks</span></div>
-  </div>
-  <div class="foot">
-    <div>02 · The World Today</div>
-    <div>Same day, same drinks</div>
-  </div>
-</section>
-
-<!-- ============ 03 · THE PROBLEM ============ -->
-<section class="slide dark" data-slide-id="the-problem">
-  <div class="chrome">
-    <div>The Problem · The gap</div>
-    <div>03 / 10</div>
-  </div>
-  <div class="frame grid-2-7-5" style="padding-top:5vh">
-    <div style="display:flex;flex-direction:column;gap:3vh">
+  <div class="frame grid-2-6-6" style="padding-top:3vh">
+    <div style="display:flex;flex-direction:column;gap:2.4vh">
       <div>
-        <div class="kicker" data-anim>THE PROBLEM</div>
-        <h2 class="h-xl" style="font-size:min(5vw,8.6vh);line-height:1.05" data-anim>Mixed drinks,<br>anytime, anywhere.</h2>
-        <p class="lead" style="margin-top:2.2vh;max-width:44ch" data-anim>A real mixed drink needs a barista, a queue, and a menu you didn't write. Cafés close, vending machines pour the same cans — nothing mixes a fresh cup on the spot.</p>
-        <div class="meta-row" style="margin-top:2.4vh" data-anim><span>no barista</span><span>no queue</span><span>no fixed menu</span></div>
+        <div class="kicker" data-anim>TRY IT BEFORE WE BEGIN</div>
+        <h2 class="h-xl" style="font-size:min(4.8vw,8.2vh)" data-anim>The machine is live.<br>Your phone is the menu.</h2>
+        <p class="lead" style="margin-top:2.2vh;max-width:44ch" data-anim>Scan the code and build a cup while we talk. The same interface the machine runs.</p>
+        <div class="meta-row" style="margin-top:2.4vh" data-anim><span>no app</span><span>·</span><span>no account</span><span>·</span><span>any phone</span></div>
       </div>
-      <div class="callout" data-anim style="max-width:44ch">
-        "The machine that mixes your drink, on the spot, doesn't exist. Yet."
-        <div class="callout-src">The gap sip. fills</div>
-      </div>
-    </div>
-    <figure class="frame-img r-16x10" data-anim style="margin-top:3vh">
-      <img src="images/06-drinks.jpg" alt="Photo: drinks lined up on a cafe counter">
-      <figcaption class="img-cap">Fixed options · not your mix</figcaption>
-    </figure>
-  </div>
-  <div class="foot">
-    <div>03 · The Problem</div>
-    <div>Anywhere, on the spot</div>
-  </div>
-</section>
-
-<!-- ============ 04 · THE PRODUCT ============ -->
-<section class="slide hero light" data-animate="hero" data-slide-id="product">
-  <div class="chrome">
-    <div>The Product · Meet sip.</div>
-    <div>04 / 10</div>
-  </div>
-  <div class="frame" style="display:grid;gap:3.6vh;align-content:center;min-height:80vh">
-    <div class="kicker" data-anim>THE PRODUCT</div>
-    <h1 class="h-hero h-hero-en" style="font-size:min(8vw,13vh);line-height:.98;font-weight:800" data-anim>Meet sip.</h1>
-    <p class="lead" style="max-width:54ch;margin-top:1vh" data-anim>Four pumps — coffee, milk, black tea and coconut water. Twenty house drinks, every cup 150 ml, ordered ahead and poured to the millilitre.</p>
-    <div class="meta-row" data-anim><span style="font-family:var(--serif-zh)">咖啡</span><span>·</span><span style="font-family:var(--serif-zh)">牛奶</span><span>·</span><span style="font-family:var(--serif-zh)">紅茶</span><span>·</span><span style="font-family:var(--serif-zh)">椰子水</span></div>
-  </div>
-  <div class="foot">
-    <div>04 · The Product</div>
-    <div>Four pumps in, one good cup out</div>
-  </div>
-</section>
-
-<!-- ============ 05 · THE MENU ============ -->
-<section class="slide dark" data-slide-id="menu">
-  <div class="chrome">
-    <div>The Menu · Ratio → cup</div>
-    <div>05 / 10</div>
-  </div>
-  <div class="frame" style="padding-top:2vh">
-    <div class="kicker" data-anim>TWENTY DRINKS, FOUR PUMPS</div>
-    <h2 class="h-xl" style="font-size:min(4.8vw,8.4vh)" data-anim>One menu, four ratios.</h2>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.6vw;margin-top:3.4vh">
-      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh" data-anim>
-        <div class="meta" style="opacity:.6">COFFEE · 7 DRINKS</div>
-        <div class="drink-row"><span class="dn">Long Black</span><span class="dr">100 coffee</span></div>
-        <div class="drink-row"><span class="dn">Flat White</span><span class="dr">40 coffee · 60 milk</span></div>
-        <div class="drink-row"><span class="dn">Café Latte</span><span class="dr">30 coffee · 70 milk</span></div>
-        <div class="drink-row"><span class="dn">Cappuccino</span><span class="dr">45 coffee · 55 milk</span></div>
-        <div class="drink-row"><span class="dn">Coffee Milk</span><span class="dr">50 coffee · 50 milk</span></div>
-        <div class="drink-row"><span class="dn">Coconut Americano</span><span class="dr">40 coffee · 60 coconut</span></div>
-        <div class="drink-row"><span class="dn">Coconut Latte</span><span class="dr">30 coffee · 35 milk · 35 coconut</span></div>
-      </div>
-      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh" data-anim>
-        <div class="meta" style="opacity:.6">TEA · 5 DRINKS</div>
-        <div class="drink-row"><span class="dn">Black Tea</span><span class="dr">100 tea</span></div>
-        <div class="drink-row"><span class="dn">HK Milk Tea</span><span class="dr">65 tea · 35 milk</span></div>
-        <div class="drink-row"><span class="dn">Tea Latte</span><span class="dr">55 tea · 45 milk</span></div>
-        <div class="drink-row"><span class="dn">Coconut Tea</span><span class="dr">55 tea · 45 coconut</span></div>
-        <div class="drink-row"><span class="dn">Coconut Milk Tea</span><span class="dr">50 tea · 25 milk · 25 coconut</span></div>
-      </div>
-      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh" data-anim>
-        <div class="meta" style="opacity:.6">COCONUT · 2 DRINKS</div>
-        <div class="drink-row"><span class="dn">Pure Coconut Water</span><span class="dr">100 coconut</span></div>
-        <div class="drink-row"><span class="dn">Coco Cloud</span><span class="dr">60 coconut · 40 milk</span></div>
-      </div>
-      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh" data-anim>
-        <div class="meta" style="opacity:.6">SIGNATURE · 6 DRINKS</div>
-        <div class="drink-row"><span class="dn">Yuanyang</span><span class="dr">50 tea · 30 coffee · 20 milk</span></div>
-        <div class="drink-row"><span class="dn">Coconut Yuanyang</span><span class="dr">35 tea · 25 coffee · 20 milk · 20 coconut</span></div>
-        <div class="drink-row"><span class="dn">Coffee Tea</span><span class="dr">50 coffee · 50 tea</span></div>
-        <div class="drink-row"><span class="dn">The Full House</span><span class="dr">25 of all four</span></div>
-        <div class="drink-row"><span class="dn">Night Shift</span><span class="dr">60 coffee · 20 milk · 20 tea</span></div>
-        <div class="drink-row"><span class="dn">Sunset Blend</span><span class="dr">35 coffee · 25 milk · 15 tea · 25 coconut</span></div>
+      <div style="display:flex;flex-direction:column;gap:1.4vh" data-anim>
+        <div class="meta" style="opacity:.55">The same public service as the live demo — not a mock-up.</div>
+        <div style="display:flex;align-items:center;gap:1.2vw;flex-wrap:wrap;font-family:var(--serif-en);font-style:italic;font-size:1.55vw;opacity:.85"><span>SCAN</span><span style="opacity:.4">→</span><span>BUILD</span><span style="opacity:.4">→</span><span>ORDER</span><span style="opacity:.4">→</span><span>WATCH THE CUP</span></div>
+        <div class="meta" style="opacity:.55">eric-gong.com/sip</div>
       </div>
     </div>
-    <div class="meta-row" style="margin-top:3.2vh" data-anim><span>1% = 1.5 ml</span><span>·</span><span>every cup is 150 ml</span><span>·</span><span>no sugar pump</span></div>
-  </div>
-  <div class="foot">
-    <div>05 · The Menu</div>
-    <div>Twenty drinks from four pumps</div>
-  </div>
-</section>
-
-<!-- ============ 06 · WHAT IT CAN DO · HARDWARE ============ -->
-<section class="slide light" data-slide-id="do-hardware">
-  <div class="chrome">
-    <div>What It Can Do · Hardware</div>
-    <div>06 / 10</div>
-  </div>
-  <div class="frame" style="padding-top:3vh">
-    <div class="kicker" data-anim>WHAT IT CAN DO · HARDWARE</div>
-    <h2 class="h-xl" style="font-size:min(4.8vw,8.2vh)" data-anim>A counter that pours.</h2>
-    <p class="lead" style="margin-top:2vh;max-width:60ch" data-anim>Behind the screen is a rig that never needs a barista — four pumps, one Arduino, a 3D-printed shell — and a cup that always fills to exactly 150 ml.</p>
-    <div class="grid-3 stat-compact" style="margin-top:2.8vh;align-content:start;flex:0 0 auto">
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Pumps</div>
-        <div class="stat-nb">4<span class="stat-unit">liquids</span></div>
-        <div class="stat-note">Coffee, milk, black tea and coconut water — one pump each.</div>
-      </div>
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Brain</div>
-        <div class="stat-nb">1<span class="stat-unit">Arduino Uno</span></div>
-        <div class="stat-note">Opens the right pump at the right moment, every time.</div>
-      </div>
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Every cup</div>
-        <div class="stat-nb">150<span class="stat-unit">ml</span></div>
-        <div class="stat-note">One size. Metered to the millilitre, never a splash more.</div>
-      </div>
-    </div>
-    <div class="meta-row" style="margin-top:2.4vh" data-anim><span>coffee</span><span>·</span><span>milk</span><span>·</span><span>black tea</span><span>·</span><span>coconut water</span></div>
-  </div>
-  <div class="foot">
-    <div>06 · What it can do · Hardware</div>
-    <div>Four pumps, one cup</div>
-  </div>
-</section>
-
-<!-- ============ 07 · WHAT IT CAN DO · SOFTWARE ============ -->
-<section class="slide dark" data-slide-id="do-software">
-  <div class="chrome">
-    <div>What It Can Do · Software</div>
-    <div>07 / 10</div>
-  </div>
-  <div class="frame" style="padding-top:3vh">
-    <div class="kicker" data-anim>WHAT IT CAN DO · SOFTWARE</div>
-    <h2 class="h-xl" style="font-size:min(4.4vw,7.8vh)" data-anim>A menu that takes orders.</h2>
-    <p class="lead" style="margin-top:1.6vh;max-width:60ch" data-anim>Browse twenty drinks, tune your own mix, order ahead and collect with a six-digit code. It all runs in the browser — no app to install.</p>
-    <div class="grid-3 stat-compact" style="margin-top:2vh;align-content:start;flex:0 0 auto">
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Menu</div>
-        <div class="stat-nb">20<span class="stat-unit">drinks</span></div>
-        <div class="stat-note">Four categories, every recipe an exact pump ratio.</div>
-      </div>
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Pickup</div>
-        <div class="stat-nb">1<span class="stat-unit">code</span></div>
-        <div class="stat-note">Order ahead — a six-digit code unlocks your cup.</div>
-      </div>
-      <div class="stat-card" data-anim>
-        <div class="stat-label">Apps</div>
-        <div class="stat-nb">0<span class="stat-unit">installed</span></div>
-        <div class="stat-note">The whole counter lives on one web page.</div>
-      </div>
-    </div>
-    <div style="margin-top:2vh;display:grid;grid-template-columns:1fr 1.45fr;gap:2.4vw;align-items:stretch" data-anim>
-      <a href="https://eric-gong.com/sip/" target="_blank" rel="noopener" style="border:1px solid rgba(238,223,199,.5);background:rgba(238,223,199,.1);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2vh;text-decoration:none;color:inherit">
-        <span style="font-family:var(--serif-en);font-weight:700;font-size:2.8vw;line-height:1">Try now <span style="opacity:.6">↗</span></span>
-        <span class="body-zh" style="font-size:max(13px,.95vw);opacity:.72">The full ordering experience, in the browser.</span>
-      </a>
-      <figure class="frame-img" style="height:30vh">
-        <img src="images/07-site.png" alt="Screenshot of the sip. ordering page">
-      </figure>
-    </div>
-  </div>
-  <div class="foot">
-    <div>07 · What it can do · Software</div>
-    <div>Watch it live</div>
-  </div>
-</section>
-
-<!-- ============ 08 · HOW WE BUILT IT · HARDWARE ============ -->
-<section class="slide light" data-slide-id="build-hardware">
-  <div class="chrome">
-    <div>How We Built It · Hardware</div>
-    <div>08 / 10</div>
-  </div>
-  <div class="frame grid-2-7-5" style="padding-top:3vh">
-    <div style="display:flex;flex-direction:column;gap:1.8vh">
-      <div>
-        <div class="kicker" data-anim>HOW WE BUILT IT · HARDWARE</div>
-        <h2 class="h-xl" style="font-size:min(4vw,7vh)" data-anim>Designed in SolidWorks.<br>Printed, wired, pumped.</h2>
-        <p class="lead" style="margin-top:1.4vh;max-width:46ch" data-anim>The mechanism starts as a SolidWorks model, becomes a printed shell, and is driven by an Arduino Uno with four pumps.</p>
-      </div>
-      <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 2.4vw;margin-top:.6vh" data-anim>
-        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>SolidWorks 3D model</span><span class="meta" style="opacity:.45">design</span></li>
-        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>3D-printed shell</span><span class="meta" style="opacity:.45">frame</span></li>
-        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>Arduino Uno</span><span class="meta" style="opacity:.45">control</span></li>
-        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>4× pumps</span><span class="meta" style="opacity:.45">pour</span></li>
-        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>MOSFET driver + PSU</span><span class="meta" style="opacity:.45">power</span></li>
-        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>HX711 load cell</span><span class="meta" style="opacity:.45">weight</span></li>
-      </ul>
-      <div class="meta-row" data-anim><span>~¥550–700 BOM</span><span>·</span><span>145 × 544 × 145 mm</span><span>·</span><span>SolidWorks → print → wire</span></div>
-    </div>
-    <figure class="frame-img r-4x3 model-stage" data-anim style="margin-top:2vh">
-      <div class="model-view" role="img" aria-label="3D render of the sip. drink mechanism"></div>
-      <figcaption class="img-cap">SolidWorks model · drinkMech_fin</figcaption>
-    </figure>
-  </div>
-  <div class="foot">
-    <div>08 · How we built it · Hardware</div>
-    <div>SolidWorks → print → wire</div>
-  </div>
-</section>
-
-<!-- ============ 09 · HOW WE BUILT IT · SOFTWARE ============ -->
-<section class="slide dark" data-animate="pipeline" data-slide-id="build-software">
-  <div class="chrome">
-    <div>How We Built It · Software</div>
-    <div>09 / 10</div>
-  </div>
-  <div class="frame" style="padding-top:3vh">
-    <div class="kicker">HOW WE BUILT IT · SOFTWARE</div>
-    <h2 class="h-xl" style="font-size:min(5.2vw,9vh)">One order, five hops.</h2>
-    <p class="lead" style="margin-top:2.2vh;max-width:58ch">From the customer page to the cup, every sip travels through a laptop, a cloud server and an Arduino.</p>
-    <div class="pipeline-section" style="margin-top:3.4vh">
-      <div class="pipeline-label">Signal chain · browser → cloud → counter → arduino → cup</div>
-      <div class="pipeline">
-        <div class="step" data-anim="step">
-          <div class="step-nb">01</div>
-          <div class="step-title">Order</div>
-          <div class="step-desc">Pick a drink on the customer page, or build one in the Mix Lab.</div>
-        </div>
-        <div class="step" data-anim="step">
-          <div class="step-nb">02</div>
-          <div class="step-title">Cloud</div>
-          <div class="step-desc">The order hits the FastAPI server on the cloud.</div>
-        </div>
-        <div class="step" data-anim="step">
-          <div class="step-nb">03</div>
-          <div class="step-title">Counter</div>
-          <div class="step-desc">The counter confirms it and issues a six-digit code.</div>
-        </div>
-        <div class="step" data-anim="step">
-          <div class="step-nb">04</div>
-          <div class="step-title">Arduino</div>
-          <div class="step-desc">The station checks the code and maps millilitres to pumps.</div>
-        </div>
-        <div class="step" data-anim="step">
-          <div class="step-nb">05</div>
-          <div class="step-title">Cup</div>
-          <div class="step-desc">Four pumps pour 150 ml, millilitre by millilitre.</div>
-        </div>
-      </div>
-    </div>
-    <div class="rowline" style="margin-top:5vh" data-anim>
-      <div class="k">Payload</div>
-      <div class="v">The whole order is four pump volumes in millilitres — nothing else crosses the wire.</div>
-      <div class="m">pump1–4 · ml</div>
-    </div>
-  </div>
-  <div class="foot">
-    <div>09 · How we built it · Software</div>
-    <div>Browser → cloud → cup</div>
-  </div>
-</section>
-
-<!-- ============ 10 · TRY IT ============ -->
-<section class="slide hero dark" data-animate="hero" data-slide-id="try-it">
-  <div class="chrome">
-    <div>Try It · Questions</div>
-    <div>10 / 10</div>
-  </div>
-  <div class="frame" style="display:grid;grid-template-columns:1.4fr 1fr;gap:4vw;align-content:center;min-height:80vh">
-    <div style="display:flex;flex-direction:column;gap:3vh">
-      <div class="kicker" data-anim>COME TRY IT</div>
-      <h1 class="h-hero h-hero-en" style="font-size:min(7.6vw,12.4vh);line-height:1" data-anim>Take a<br>sip.</h1>
-      <p class="lead" style="max-width:44ch" data-anim>Come to the counter, scan the code, and pour your own cup. Questions welcome — we'll be right here.</p>
-      <div class="meta-row" data-anim><span>eric-gong.com/sip</span><span>·</span><span>github.com/Percy-the-train/moodmixer</span><span>·</span><span>LingLam 3D · 2026</span></div>
-    </div>
-    <figure class="frame-img r-1x1 fit-contain" data-anim style="max-height:56vh">
+    <figure class="frame-img r-1x1 fit-contain" data-anim style="max-height:56vh;margin-top:2vh">
       <img src="images/qr-code.png" alt="QR code to the sip. ordering page">
       <figcaption class="img-cap">Scan to order</figcaption>
     </figure>
   </div>
   <div class="foot">
-    <div>10 · Try it</div>
-    <div>Questions?</div>
+    <div>sip. · INT4089 · Group Project</div>
+    <div>02 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 03 · PROBLEM IDENTIFICATION ============ -->
+<section class="slide dark" data-slide-id="problem">
+  <div class="chrome">
+    <div>Problem Identification · 15%</div>
+    <div>03 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PROBLEM IDENTIFICATION</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The break is short. The cup is opaque.</h2>
+    <div class="callout" style="margin-top:3vh" data-anim>
+      <div class="q-big">Students and staff need a drink they can customise and collect quickly.</div>
+      <div style="margin-top:1.2vh;font-family:var(--sans-zh);opacity:.8">Queues eat the break, menus ignore dietary needs, the cup hides what is in it.</div>
+      <div class="callout-src">Problem statement · who / what / why</div>
+    </div>
+    <div class="meta" style="margin-top:3.4vh;opacity:.55" data-anim>NEED FINDING · UNCERTAINTY, NOT THIRST — PEOPLE WAIT FOR A DRINK THEY TRUST</div>
+    <div style="margin-top:2vh;display:grid;grid-template-columns:repeat(4,1fr);gap:1.6vw">
+      <div class="stat-card" data-anim><div class="stat-label">01</div><div class="stat-note">The queue — waiting eats the break.</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">02</div><div class="stat-note">Menus ignore bodies — allergies, caffeine, taste.</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">03</div><div class="stat-note">The cup is opaque — no ratio, no volume, no record.</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">04</div><div class="stat-note">The machine is a box — no data, no learning.</div></div>
+    </div>
+    <div class="meta-row" style="margin-top:3.6vh" data-anim><span style="font-family:var(--serif-zh)">A tea that tastes barely sweet held 48 g of sugar — near the WHO daily limit.</span><span style="opacity:.5">Oriental Daily · 17 Nov 2025</span></div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>03 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 04 · WHAT THE CUP DOES NOT SAY ============ -->
+<section class="slide light" data-slide-id="sugar">
+  <div class="chrome">
+    <div>Problem Identification · 15%</div>
+    <div>04 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PROBLEM IDENTIFICATION</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>What the cup does not say.</h2>
+    <div class="grid-2-6-6" style="margin-top:3.4vh;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:1.6vh" data-anim>
+        <div class="meta" style="opacity:.55">SUGAR IN ONE 150 ML CUP</div>
+        <div style="display:flex;flex-direction:column;gap:1.5vh">
+          <div style="display:grid;grid-template-columns:9ch 1fr 7ch;gap:1.2vw;align-items:center"><span class="body-zh">Cola</span><span style="height:1vh;background:rgba(42,30,19,.78);display:block"></span><span class="meta" style="justify-self:end">15.9 g</span></div>
+          <div style="display:grid;grid-template-columns:9ch 1fr 7ch;gap:1.2vw;align-items:center"><span class="body-zh">Orange juice</span><span style="height:1vh;background:rgba(42,30,19,.66);display:block;width:84%"></span><span class="meta" style="justify-self:end">13.5 g</span></div>
+          <div style="display:grid;grid-template-columns:9ch 1fr 7ch;gap:1.2vw;align-items:center"><span class="body-zh">Whole milk</span><span style="height:1vh;background:rgba(42,30,19,.42);display:block;width:44%"></span><span class="meta" style="justify-self:end">7.1 g</span></div>
+          <div style="display:grid;grid-template-columns:9ch 1fr 7ch;gap:1.2vw;align-items:center"><span class="body-zh">Black tea</span><span style="height:1vh;background:rgba(42,30,19,.14);display:block;width:0%"></span><span class="meta" style="justify-self:end">0 g</span></div>
+        </div>
+        <p class="body-zh" style="font-size:max(12px,.92vw);opacity:.68;max-width:46ch">Typical values. Cola's 16 g is about 40% of a child's daily free-sugar budget (WHO: under 10% of energy). Milk's 7 g is lactose, not free sugar.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.6vh" data-anim>
+        <div class="meta" style="opacity:.55">THE MISSING INPUT · HOW YOU FEEL</div>
+        <div class="callout" style="padding:2.2vh 1.8vw">
+          <div class="q-big" style="font-size:max(15px,1.4vw)">It never asks how you feel.</div>
+        </div>
+        <div class="meta-row" style="flex-wrap:nowrap;gap:.9em"><span>Selfie</span><span style="opacity:.4">→</span><span>Face model</span><span style="opacity:.4">→</span><span>Recipe map</span><span style="opacity:.4">→</span><span>Confirm</span></div>
+        <div style="display:flex;flex-direction:column;gap:1vh;font-family:var(--sans-zh);font-size:max(13px,1vw);opacity:.82">
+          <span>Stressed → warm milk tea.</span>
+          <span>Tired → coffee, sugar capped.</span>
+          <span>Happy → coconut and tea. <em>You still confirm the cup.</em></span>
+        </div>
+        <div class="tag" style="align-self:flex-start">V2 · In development · No image stored</div>
+      </div>
+    </div>
+    <div style="margin-top:3.6vh;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6vw" data-anim>
+      <div class="stat-card"><div class="stat-label">Health</div><div class="stat-note">Most East Asian adults digest lactose poorly (NIH).</div></div>
+      <div class="stat-card"><div class="stat-label">Social science</div><div class="stat-note">Mood drives choice: comfort, reward, belonging.</div></div>
+      <div class="stat-card"><div class="stat-label">Pedagogy</div><div class="stat-note">One cup, three subjects: measure, classify, consent.</div></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>04 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 05 · RESEARCH AND ANALYSIS ============ -->
+<section class="slide dark" data-slide-id="landscape">
+  <div class="chrome">
+    <div>Research and Analysis · 15%</div>
+    <div>05 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>RESEARCH AND ANALYSIS</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>Everyone sells drinks.<br>None read you.</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.6vw;margin-top:3.6vh">
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh" data-anim>
+        <div class="meta" style="opacity:.6">CAMPUS CAFÉ</div>
+        <div class="body-serif" style="font-size:1.15vw">Craft and custom — eight minutes, one human.</div>
+      </div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh" data-anim>
+        <div class="meta" style="opacity:.6">VENDING MACHINE</div>
+        <div class="body-serif" style="font-size:1.15vw">Fast, sealed, one recipe per button.</div>
+      </div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh" data-anim>
+        <div class="meta" style="opacity:.6">OPEN-SOURCE RIG</div>
+        <div class="body-serif" style="font-size:1.15vw">Teachable and open — but a demo.</div>
+      </div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh" data-anim>
+        <div class="meta" style="opacity:.6">SIP. LIVE PAGE</div>
+        <div class="body-serif" style="font-size:1.15vw">Custom, coded, measured — and public.</div>
+      </div>
+    </div>
+    <div class="rowline" style="margin-top:4vh" data-anim>
+      <div class="k">The gap</div>
+      <div class="v" style="font-family:var(--serif-zh);font-size:max(16px,1.35vw)">All four pour a drink. Only one can say what is in the cup — and none of them reads the person holding it.</div>
+      <div class="m">04</div>
+    </div>
+    <div class="meta" style="margin-top:2.6vh;opacity:.5" data-anim>Category illustrations, not any single product. The sip. card shows the live public page.</div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>05 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 06 · CAPABILITY TABLE ============ -->
+<section class="slide light" data-slide-id="capabilities">
+  <div class="chrome">
+    <div>Research and Analysis · 15%</div>
+    <div>06 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>RESEARCH AND ANALYSIS</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>What we have that they do not.</h2>
+    <div class="tbl" style="margin-top:3.6vh;grid-template-columns:2.3fr 1fr 1fr 1fr 1.3fr" data-anim>
+      <div class="tr th"><span>Capability</span><span>Vending</span><span>Café</span><span>DIY rig</span><span>sip.</span></div>
+      <div class="tr"><span class="c1">Custom ratios in a fixed 75 ml cup</span><span class="m">NO</span><span class="m">PART</span><span class="m">YES</span><span class="m" style="opacity:1">YES</span></div>
+      <div class="tr"><span class="c1">Exact weight by closed-loop dispensing</span><span class="m">NO</span><span class="m">NO</span><span class="m">PART</span><span class="m" style="opacity:1">YES</span></div>
+      <div class="tr"><span class="c1">Nutrition shown before the pour</span><span class="m">NO</span><span class="m">PART</span><span class="m">NO</span><span class="m" style="opacity:1">YES</span></div>
+      <div class="tr"><span class="c1">Dietary filters: sugar, caffeine, lactose</span><span class="m">NO</span><span class="m">PART</span><span class="m">NO</span><span class="m" style="opacity:1">YES</span></div>
+      <div class="tr"><span class="c1">Mood-aware suggestion from a selfie (v2)</span><span class="m">NO</span><span class="m">NO</span><span class="m">NO</span><span class="m" style="opacity:1">YES</span></div>
+      <div class="tr"><span class="c1">Rebuildable by students from off-the-shelf parts</span><span class="m">NO</span><span class="m">NO</span><span class="m">YES</span><span class="m" style="opacity:1">YES</span></div>
+    </div>
+    <div class="meta" style="margin-top:2.4vh;opacity:.55" data-anim>YES = works today · PART = possible with effort or a human · NO = out of scope. The v2 row is designed, not shipped.</div>
+    <div style="margin-top:3vh;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6vw" data-anim>
+      <div class="stat-card"><div class="stat-label">Emotion</div><div class="stat-note">A selfie proposes a recipe; the customer confirms it.</div></div>
+      <div class="stat-card"><div class="stat-label">Health</div><div class="stat-note">Sugar, caffeine and lactose are counted before the pour.</div></div>
+      <div class="stat-card"><div class="stat-label">AI</div><div class="stat-note">A classifier proposes; the scale and the human decide.</div></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>06 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 07 · STEM ============ -->
+<section class="slide dark" data-slide-id="stem">
+  <div class="chrome">
+    <div>Research and Analysis · 15%</div>
+    <div>07 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>RESEARCH AND ANALYSIS</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>One machine, five STEM letters.</h2>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.4vw;margin-top:3.6vh">
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh" data-anim>
+        <div class="mid-num" style="font-size:5vw">S</div>
+        <div class="meta" style="opacity:.7">SCIENCE</div>
+        <div class="body-zh" style="font-size:max(12px,.92vw)">Flavour is chemistry.</div>
+        <div class="meta" style="opacity:.5">ratios, solubility, temperature</div>
+      </div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh" data-anim>
+        <div class="mid-num" style="font-size:5vw">T</div>
+        <div class="meta" style="opacity:.7">TECHNOLOGY</div>
+        <div class="body-zh" style="font-size:max(12px,.92vw)">Two services, one protocol.</div>
+        <div class="meta" style="opacity:.5">Node, HTTPS, JSON</div>
+      </div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh" data-anim>
+        <div class="mid-num" style="font-size:5vw">E</div>
+        <div class="meta" style="opacity:.7">ENGINEERING</div>
+        <div class="body-zh" style="font-size:max(12px,.92vw)">Design is a loop.</div>
+        <div class="meta" style="opacity:.5">EDP, state machines</div>
+      </div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh" data-anim>
+        <div class="mid-num" style="font-size:5vw">A</div>
+        <div class="meta" style="opacity:.7">ARTS</div>
+        <div class="body-zh" style="font-size:max(12px,.92vw)">The interface is the product.</div>
+        <div class="meta" style="opacity:.5">type, colour, naming</div>
+      </div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh" data-anim>
+        <div class="mid-num" style="font-size:5vw">M</div>
+        <div class="meta" style="opacity:.7">MATHEMATICS</div>
+        <div class="body-zh" style="font-size:max(12px,.92vw)">75 ml is a limit.</div>
+        <div class="meta" style="opacity:.5">partitions, ratios</div>
+      </div>
+    </div>
+    <div class="meta" style="margin-top:3.6vh;opacity:.55" data-anim>21ST-CENTURY SKILLS · THE 4Cs</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.6vw;margin-top:1.6vh" data-anim>
+      <div class="stat-card"><div class="stat-label">Critical thinking</div><div class="stat-note">decision matrix</div></div>
+      <div class="stat-card"><div class="stat-label">Creativity</div><div class="stat-note">20 recipes + MixLab</div></div>
+      <div class="stat-card"><div class="stat-label">Communication</div><div class="stat-note">manual + demo</div></div>
+      <div class="stat-card"><div class="stat-label">Collaboration</div><div class="stat-note">four roles</div></div>
+    </div>
+    <div class="meta-row" style="margin-top:3vh" data-anim><span>Industry 4.0: IoT relay</span><span>·</span><span>cyber-physical weight loop</span><span>·</span><span>optional AI barista (off by default)</span></div>
+    <p class="lead" style="margin-top:2.4vh;max-width:70ch;font-size:1.4vw" data-anim>Each letter is a decision you can point at — not a label added after the fact.</p>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>07 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 08 · EDP ============ -->
+<section class="slide light" data-slide-id="edp">
+  <div class="chrome">
+    <div>Prototype Design and Justification · 15%</div>
+    <div>08 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PROTOTYPE DESIGN AND JUSTIFICATION</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The whole project on one page.</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.4vw;margin-top:3.6vh">
+      <div class="stat-card" data-anim><div class="stat-label">01 · DEFINE</div><div class="stat-note">short break, opaque cup, reframed</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">02 · RESEARCH</div><div class="stat-note">competitors, AI</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">03 · GENERATE</div><div class="stat-note">concepts A·B·C</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">04 · SELECT</div><div class="stat-note">decision matrix</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">05 · BUILD</div><div class="stat-note">pumps, kiosk, relay</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">06 · TEST</div><div class="stat-note">T1–T6, fault injection</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">07 · EVALUATE</div><div class="stat-note">10/10 full, 2.1% mean</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">08 · REFLECT</div><div class="stat-note">manual + v2 backlog · 4 fixes</div></div>
+    </div>
+    <div class="meta" style="margin-top:3.4vh;opacity:.55" data-anim>ARTIFACTS · PROBLEM STATEMENT · COMPETITOR TABLE · A/B/C SKETCHES · 4.05/5 MATRIX · FIRMWARE AND UI · T1–T6 · 10 PHYSICAL RUNS · V2 BACKLOG</div>
+    <div class="rowline" style="margin-top:3vh" data-anim>
+      <div class="k">Takeaway</div>
+      <div class="v" style="font-family:var(--serif-zh);font-size:max(16px,1.35vw)">The EDP (Lecture 2) is not a line. The loops are where the learning happened.</div>
+      <div class="m">EDP</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>08 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 09 · THREE CONCEPTS ============ -->
+<section class="slide dark" data-slide-id="concepts">
+  <div class="chrome">
+    <div>Prototype Design and Justification · 15%</div>
+    <div>09 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PROTOTYPE DESIGN AND JUSTIFICATION</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>Three concepts. One decision.</h2>
+    <div class="split" style="margin-top:3.4vh;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:2.2vh" data-anim>
+        <div style="border-top:1px solid rgba(238,223,199,.35);padding-top:1.6vh;display:flex;flex-direction:column;gap:.8vh">
+          <div class="meta" style="opacity:.6">A · GRAVITY TAP</div>
+          <div class="body-zh" style="font-size:max(13px,1vw);opacity:.8">One reservoir, one valve. No recipe control.</div>
+        </div>
+        <div style="border-top:1px solid rgba(238,223,199,.35);padding-top:1.6vh;display:flex;flex-direction:column;gap:.8vh">
+          <div class="meta" style="opacity:.6">B · CAROUSEL</div>
+          <div class="body-zh" style="font-size:max(13px,1vw);opacity:.8">Four reservoirs on a rotating head over an open cup.</div>
+        </div>
+        <div style="border-top:1px solid rgba(238,223,199,.7);padding-top:1.6vh;display:flex;flex-direction:column;gap:.8vh">
+          <div class="meta" style="opacity:.9">C · FOUR FIXED PUMPS · SELECTED</div>
+          <div class="body-zh" style="font-size:max(13px,1vw);opacity:.9">One manifold; all motion in software.</div>
+        </div>
+      </div>
+      <div data-anim>
+        <div class="tbl" style="grid-template-columns:1.6fr .7fr .7fr .7fr">
+          <div class="tr th"><span>Criterion (weight)</span><span>A</span><span>B</span><span>C</span></div>
+          <div class="tr"><span class="c1">Customisation (25)</span><span class="m">1</span><span class="m">3</span><span class="m" style="opacity:1">5</span></div>
+          <div class="tr"><span class="c1">Speed (20)</span><span class="m">2</span><span class="m">3</span><span class="m" style="opacity:1">4</span></div>
+          <div class="tr"><span class="c1">Reliability (20)</span><span class="m">3</span><span class="m">2</span><span class="m" style="opacity:1">4</span></div>
+          <div class="tr"><span class="c1">Hygiene (15)</span><span class="m">2</span><span class="m">3</span><span class="m" style="opacity:1">4</span></div>
+          <div class="tr"><span class="c1">Buildability (10)</span><span class="m">5</span><span class="m">2</span><span class="m" style="opacity:1">3</span></div>
+          <div class="tr"><span class="c1">Cost (10)</span><span class="m">5</span><span class="m">2</span><span class="m" style="opacity:1">3</span></div>
+          <div class="tr"><span class="c1">Weighted total / 5</span><span class="m">2.55</span><span class="m">2.60</span><span class="m" style="opacity:1">4.05</span></div>
+        </div>
+        <div class="callout" style="margin-top:3vh">
+          <div class="q-big" style="font-size:max(15px,1.35vw)">Why C — the cup stays still, the fluid path stays short, and the recipe becomes data instead of mechanics.</div>
+          <div class="callout-src">Selected · 4.05 / 5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>09 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 10 · THREE ROADS NOT TAKEN ============ -->
+<section class="slide light" data-slide-id="rejections">
+  <div class="chrome">
+    <div>Prototype Design and Justification · 15%</div>
+    <div>10 / 27</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:4vh">
+    <div style="display:flex;flex-direction:column;gap:2.4vh">
+      <div>
+        <div class="kicker" data-anim>PROTOTYPE DESIGN AND JUSTIFICATION</div>
+        <h2 class="h-xl" style="font-size:min(4.6vw,7.8vh)" data-anim>Three roads we did not take.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2vh" data-anim>
+        <div style="border-top:1px solid rgba(42,30,19,.25);padding-top:1.4vh;display:flex;flex-direction:column;gap:.6vh">
+          <div class="meta" style="opacity:.6">01 · VALVES FIRST · REJECTED</div>
+          <div class="body-zh" style="font-size:max(13px,.98vw)">Tried one solenoid valve per flavour. Why not: seals leak, cleaning is slow, a failed valve drains the line. Chose peristaltic pumps: self-priming, tube-only wetted part.</div>
+        </div>
+        <div style="border-top:1px solid rgba(42,30,19,.25);padding-top:1.4vh;display:flex;flex-direction:column;gap:.6vh">
+          <div class="meta" style="opacity:.6">02 · PI KIOSK · REJECTED</div>
+          <div class="body-zh" style="font-size:max(13px,.98vw)">Tried a Raspberry Pi, screen and speaker as its face. Why not: OS image, drivers, lock-down, updates — a second machine. Chose computer + server: one page, no drivers.</div>
+        </div>
+        <div style="border-top:1px solid rgba(42,30,19,.25);padding-top:1.4vh;display:flex;flex-direction:column;gap:.6vh">
+          <div class="meta" style="opacity:.6">03 · LASER-CUT SHELL · REJECTED</div>
+          <div class="body-zh" style="font-size:max(13px,.98vw)">Why not: flat panels cannot form channels or pump cradles. Chose a printed shell with guides and a cup bay.</div>
+        </div>
+      </div>
+      <div class="rowline" data-anim>
+        <div class="k">Thread</div>
+        <div class="v" style="font-family:var(--serif-zh)">Every rejection moved complexity from hardware into testable software.</div>
+        <div class="m">3/3</div>
+      </div>
+    </div>
+    <figure class="frame-img r-4x3 model-stage" data-anim style="margin-top:2vh">
+      <div class="model-view" role="img" aria-label="3D render of the sip. enclosure"></div>
+      <figcaption class="img-cap">3D enclosure model</figcaption>
+    </figure>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>10 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 11 · FRAMEWORKS ============ -->
+<section class="slide dark" data-slide-id="frameworks">
+  <div class="chrome">
+    <div>Prototype Design and Justification · 15%</div>
+    <div>11 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" style="margin-bottom:1.4vh" data-anim>PROTOTYPE DESIGN AND JUSTIFICATION</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The frameworks we used, not just cited.</h2>
+    <div class="grid-4" style="margin-top:2.4vh;align-content:start;gap:2vh 2vw;flex:0 0 auto">
+      <div class="pillar" data-anim>
+        <div class="ic">L2</div>
+        <div class="t" style="font-size:1.7vw">EDP</div>
+        <div class="d">Five stages, two loops. Our flow uses all five and documents both loops.</div>
+      </div>
+      <div class="pillar" data-anim>
+        <div class="ic">L1</div>
+        <div class="t" style="font-size:1.7vw">The 4Cs</div>
+        <div class="d">The 4Cs became four team roles: research, build, test, document.</div>
+      </div>
+      <div class="pillar" data-anim>
+        <div class="ic">L2</div>
+        <div class="t" style="font-size:1.7vw">Matrix</div>
+        <div class="d">Weights, not vibes. Concept C scored 4.05 out of 5.</div>
+      </div>
+      <div class="pillar" data-anim>
+        <div class="ic">L2·5·6</div>
+        <div class="t" style="font-size:1.7vw">Arduino</div>
+        <div class="d">The course platform. Our firmware runs the weight loop on it.</div>
+      </div>
+    </div>
+    <div class="rowline" style="margin-top:1.8vh" data-anim>
+      <div class="k">Rule</div>
+      <div class="v" style="font-family:var(--serif-zh);font-size:max(16px,1.35vw)">Every framework made a decision; none was added as decoration.</div>
+      <div class="m">4/4</div>
+    </div>
+    <div class="meta" style="margin-top:1.2vh;opacity:.5" data-anim>Figures reproduced from the INT4089 lecture slides (L1, L2) for coursework critique.</div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>11 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 12 · ARCHITECTURE ============ -->
+<section class="slide light" data-slide-id="architecture">
+  <div class="chrome">
+    <div>Prototype Design and Justification · 15%</div>
+    <div>12 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PROTOTYPE DESIGN AND JUSTIFICATION</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>Two computers, one trust boundary.</h2>
+    <div style="margin-top:3.6vh;display:grid;grid-template-columns:1fr auto 1fr;gap:2vw;align-items:stretch">
+      <div style="border:1px solid rgba(42,30,19,.25);border-radius:10px;padding:2.4vh 2vw;display:flex;flex-direction:column;gap:2.2vh" data-anim>
+        <div class="meta" style="opacity:.55">PUBLIC INTERNET</div>
+        <div style="display:flex;flex-direction:column;gap:1vh">
+          <div class="meta" style="opacity:.75">CUSTOMER PHONE</div>
+          <div class="body-zh" style="font-size:max(13px,.98vw)">browser · no app · QR entry</div>
+        </div>
+        <div class="meta" style="opacity:.4">↓ HTTPS</div>
+        <div style="display:flex;flex-direction:column;gap:1vh">
+          <div class="meta" style="opacity:.75">PUBLIC RELAY · VPS</div>
+          <div class="body-zh" style="font-size:max(13px,.98vw)">ordering page · /admin · orders.json · rate limits</div>
+        </div>
+        <div class="body-zh" style="font-size:max(12px,.9vw);opacity:.6">Phone holds no secrets · no inbound port · PUMP_MODE=demo</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1vh" data-anim>
+        <div class="meta" style="opacity:.55;writing-mode:vertical-rl;letter-spacing:.3em">TRUST BOUNDARY</div>
+      </div>
+      <div style="border:1px solid rgba(42,30,19,.25);border-radius:10px;padding:2.4vh 2vw;display:flex;flex-direction:column;gap:2.2vh" data-anim>
+        <div class="meta" style="opacity:.55">MACHINE SIDE</div>
+        <div style="display:flex;flex-direction:column;gap:1vh">
+          <div class="meta" style="opacity:.75">LOCAL STATION</div>
+          <div class="body-zh" style="font-size:max(13px,.98vw)">pump adapter · USB · outbound order queue</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1vh">
+          <div class="meta" style="opacity:.75">12 V DRIVE → 4 PUMPS</div>
+          <div class="body-zh" style="font-size:max(13px,.98vw)">coffee · milk · tea · coconut</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1vh">
+          <div class="meta" style="opacity:.75">ARDUINO UNO + HX711</div>
+          <div class="body-zh" style="font-size:max(13px,.98vw)">cup + load cell</div>
+        </div>
+      </div>
+    </div>
+    <div class="rowline" style="margin-top:3.6vh" data-anim>
+      <div class="k">Rule</div>
+      <div class="v" style="font-family:var(--serif-zh);font-size:max(16px,1.35vw)">The relay never touches a pump; the station only connects outward.</div>
+      <div class="m">edge</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>12 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 13 · IT WEIGHS ============ -->
+<section class="slide dark" data-slide-id="weighs">
+  <div class="chrome">
+    <div>Prototyping and Evaluation · 15%</div>
+    <div>13 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PROTOTYPING AND EVALUATION</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>It does not guess. <em>It weighs.</em></h2>
+    <div class="grid-3 stat-compact" style="margin-top:3.4vh;align-content:start;flex:0 0 auto">
+      <div class="stat-card" data-anim><div class="stat-label">Target mass</div><div class="stat-nb">75<span class="stat-unit">g</span></div><div class="stat-note">75 ml nominal cup</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">Full runs</div><div class="stat-nb">10<span class="stat-unit">/10</span></div><div class="stat-note">Mean error 2.1% · max 6.3%</div></div>
+      <div class="stat-card" data-anim><div class="stat-label">Mean time</div><div class="stat-nb">21.5<span class="stat-unit">s</span></div><div class="stat-note">Range 19–25 s · n = 10</div></div>
+    </div>
+    <div style="margin-top:3.6vh;display:flex;flex-direction:column;gap:1.2vh" data-anim>
+      <div class="meta" style="opacity:.55">10 PHYSICAL RUNS · COMPLETION TIME (S)</div>
+      <div style="display:flex;gap:1vw;align-items:flex-end;height:14vh">
+        <div style="flex:1;display:flex;flex-direction:column;gap:.6vh;align-items:center;justify-content:flex-end"><span style="display:block;width:100%;height:13vh;background:rgba(238,223,199,.85)"></span><span class="meta" style="font-size:9px">25</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:.6vh;align-items:center;justify-content:flex-end"><span style="display:block;width:100%;height:11.4vh;background:rgba(238,223,199,.7)"></span><span class="meta" style="font-size:9px">23</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:.6vh;align-items:center;justify-content:flex-end"><span style="display:block;width:100%;height:10.4vh;background:rgba(238,223,199,.62)"></span><span class="meta" style="font-size:9px">22</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:.6vh;align-items:center;justify-content:flex-end"><span style="display:block;width:100%;height:10.4vh;background:rgba(238,223,199,.62)"></span><span class="meta" style="font-size:9px">22</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:.6vh;align-items:center;justify-content:flex-end"><span style="display:block;width:100%;height:9.4vh;background:rgba(238,223,199,.55)"></span><span class="meta" style="font-size:9px">21</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:.6vh;align-items:center;justify-content:flex-end"><span style="display:block;width:100%;height:9.4vh;background:rgba(238,223,199,.55)"></span><span class="meta" style="font-size:9px">21</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:.6vh;align-items:center;justify-content:flex-end"><span style="display:block;width:100%;height:9.4vh;background:rgba(238,223,199,.55)"></span><span class="meta" style="font-size:9px">21</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:.6vh;align-items:center;justify-content:flex-end"><span style="display:block;width:100%;height:9.4vh;background:rgba(238,223,199,.55)"></span><span class="meta" style="font-size:9px">21</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:.6vh;align-items:center;justify-content:flex-end"><span style="display:block;width:100%;height:8.4vh;background:rgba(238,223,199,.5)"></span><span class="meta" style="font-size:9px">20</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:.6vh;align-items:center;justify-content:flex-end"><span style="display:block;width:100%;height:7.4vh;background:rgba(238,223,199,.45)"></span><span class="meta" style="font-size:9px">19</span></div>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:3vh;max-width:72ch;font-size:1.4vw" data-anim>After tare, each pulse is followed by a 500 ms settle and a scale check. The loop ends on measured mass, with a target +12 g hard limit. All ten 75 ml recipes completed — time from order start to pump stop: mean 21.5 s.</p>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>13 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 14 · PIN MAP ============ -->
+<section class="slide light" data-slide-id="pinmap">
+  <div class="chrome">
+    <div>Prototyping and Evaluation · 15%</div>
+    <div>14 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PROTOTYPING AND EVALUATION</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The Arduino is the machine's reflex.</h2>
+    <div class="split" style="margin-top:3.2vh;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:2vh" data-anim>
+        <div class="meta" style="opacity:.55">PIN MAP · CHANNEL = DRIVER BOARD · INGREDIENT = TUBE</div>
+        <div class="tbl" style="grid-template-columns:.6fr 1fr 1fr .8fr">
+          <div class="tr th"><span>#</span><span>Ingredient</span><span>Driver</span><span>Pins</span></div>
+          <div class="tr"><span class="c1">1</span><span class="v">coffee</span><span class="v">CH4</span><span class="m">D3/D2 · R</span></div>
+          <div class="tr"><span class="c1">2</span><span class="v">milk</span><span class="v">CH3</span><span class="m">D5/D4 · R</span></div>
+          <div class="tr"><span class="c1">3</span><span class="v">tea</span><span class="v">CH2</span><span class="m">D7/D6 · F</span></div>
+          <div class="tr"><span class="c1">4</span><span class="v">coconut</span><span class="v">CH1</span><span class="m">D9/D8 · F</span></div>
+        </div>
+        <div class="meta" style="opacity:.7;line-height:1.8">PROTOCOL · 115200 BAUD · HELLO · CAL &lt;g&gt; · DISPENSE &lt;ch&gt; &lt;g&gt; · STOPALL<br>HX711: DT = D12 · SCK = D13</div>
+        <div class="body-zh" style="font-size:max(13px,.98vw);opacity:.75">Two logic pins: one sets direction, one switches the bridge. No PWM — dose is time plus weight; calibration lives in EEPROM.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2vh" data-anim>
+        <div class="meta" style="opacity:.55">DISPENSE CYCLE · ONE LOOP, SERIAL FIRST, SCALE SECOND</div>
+        <div style="display:flex;align-items:center;gap:.8vw;flex-wrap:wrap;font-family:var(--serif-en);font-style:italic;font-size:1.35vw;opacity:.85"><span>FAST</span><span style="opacity:.4">→</span><span>500 ms SETTLE</span><span style="opacity:.4">→</span><span>SLOW at 18 g</span><span style="opacity:.4">→</span><span>±2 g TOP-UP</span><span style="opacity:.4">→</span><span>DONE</span></div>
+        <div class="body-zh" style="font-size:max(13px,.98vw);opacity:.75">Any fault (no flow · stall · overfill · sensor · link · timeout) → all outputs low → the kiosk shows why.</div>
+        <div class="meta" style="opacity:.65;line-height:1.8">HARD LIMITS · TARGET +12 G HARD STOP · 60 PULSES · 3 S WATCHDOG · 300 S TIMEOUT · CALIBRATION IN EEPROM</div>
+        <div class="callout" style="padding:2vh 1.6vw">
+          <div class="q-big" style="font-size:max(14px,1.25vw)">Arduino Uno R3 — the platform this course teaches (L2, L5–6).</div>
+          <div class="body-zh" style="margin-top:1vh;font-size:max(12px,.92vw);opacity:.8">Why it fits: 5V logic, 14 digital pins, no OS.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>14 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 15 · TESTS ============ -->
+<section class="slide dark" data-slide-id="tests">
+  <div class="chrome">
+    <div>Prototyping and Evaluation · 15%</div>
+    <div>15 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" style="margin-bottom:1.4vh" data-anim>PROTOTYPING AND EVALUATION</div>
+    <h2 class="h-xl" style="font-size:min(4.8vw,8.2vh)" data-anim>What we tested, and what passed.</h2>
+    <div class="split" style="margin-top:1.2vh;align-items:start;flex:0 0 auto">
+      <div data-anim>
+        <div class="tbl compact" style="grid-template-columns:.7fr 2fr 1.4fr">
+          <div class="tr th"><span>Test</span><span>What we checked</span><span>Result</span></div>
+          <div class="tr"><span class="c1">T1</span><span class="v">20 recipes sum to 100</span><span class="m" style="opacity:1">20/20</span></div>
+          <div class="tr"><span class="c1">T2</span><span class="v">payload is exactly 75 ml</span><span class="m" style="opacity:1">PASS</span></div>
+          <div class="tr"><span class="c1">T3</span><span class="v">two starts at once</span><span class="m">1 DISPENSE HOLDS</span></div>
+          <div class="tr"><span class="c1">T4</span><span class="v">relay offline at start</span><span class="m">HOLDS</span></div>
+          <div class="tr"><span class="c1">T5</span><span class="v">no-flow, stall, timeout</span><span class="m" style="opacity:1">8/8</span></div>
+          <div class="tr"><span class="c1">T6</span><span class="v">full 75 ml recipe on the rig</span><span class="m" style="opacity:1">10/10</span></div>
+        </div>
+        <div class="meta" style="margin-top:1.2vh;opacity:.55">T1–T5 COVER THE LIVE SERVICES, CONTROL SIMULATOR AND INJECTED FAULTS. T6 ADDS TEN COMPLETE PHYSICAL RECIPES.</div>
+      </div>
+      <div data-anim>
+        <div class="meta" style="opacity:.55">FAULT GUARDS · ALL OUTPUTS LOW</div>
+        <div class="tbl compact" style="grid-template-columns:1.4fr 1fr">
+          <div class="tr"><span class="v">no flow</span><span class="m">8 s</span></div>
+          <div class="tr"><span class="v">stall</span><span class="m">8 s</span></div>
+          <div class="tr"><span class="v">overfill</span><span class="m">target +12 g</span></div>
+          <div class="tr"><span class="v">sensor loss</span><span class="m">1.5 s</span></div>
+          <div class="tr"><span class="v">link loss</span><span class="m">3 s</span></div>
+          <div class="tr"><span class="v">timeout</span><span class="m">300 s</span></div>
+        </div>
+        <div class="meta" style="margin-top:1.2vh;opacity:.55">EVERY GUARD WAS EXERCISED BY FAULT INJECTION; THE KIOSK REPORTS THE REASON. A PASS NEEDS THE INPUT, OUTPUT AND BOUNDARY CASE IN THE LOG.</div>
+      </div>
+    </div>
+    <div class="rowline" style="margin-top:1.4vh;grid-template-columns:.6fr 3.4fr .6fr" data-anim>
+      <div class="k">Result</div>
+      <div class="v" style="font-family:var(--serif-zh);font-size:max(16px,1.2vw)">Ten weighed runs: mean error 2.1%, max 6.3%, mean time 21.5 s.</div>
+      <div class="m">pass</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>15 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 16 · FOUR LAYERS ============ -->
+<section class="slide light" data-slide-id="layers">
+  <div class="chrome">
+    <div>Product Assembly Guide · 25%</div>
+    <div>16 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PRODUCT ASSEMBLY GUIDE</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>Four layers. Ten steps.</h2>
+    <div style="margin-top:3.4vh;display:grid;grid-template-columns:1fr 1fr;gap:0 3vw">
+      <div style="border-top:1px solid rgba(42,30,19,.25);padding:1.5vh 0;display:flex;gap:1.4vw" data-anim><span class="mid-num" style="font-size:2.2vw;line-height:1">1</span><span style="display:flex;flex-direction:column;gap:.6vh"><span class="meta" style="opacity:.6">CONTROL</span><span class="body-zh" style="font-size:max(13px,.98vw)">Arduino Uno R3; USB out the back.</span></span></div>
+      <div style="border-top:1px solid rgba(42,30,19,.25);padding:1.5vh 0;display:flex;gap:1.4vw" data-anim><span class="mid-num" style="font-size:2.2vw;line-height:1">2</span><span style="display:flex;flex-direction:column;gap:.6vh"><span class="meta" style="opacity:.6">POWER STAGE</span><span class="body-zh" style="font-size:max(13px,.98vw)">Four DRV8871 bridges; 12 V in, two logic wires each.</span></span></div>
+      <div style="border-top:1px solid rgba(42,30,19,.25);padding:1.5vh 0;display:flex;gap:1.4vw" data-anim><span class="mid-num" style="font-size:2.2vw;line-height:1">3</span><span style="display:flex;flex-direction:column;gap:.6vh"><span class="meta" style="opacity:.6">WIRE FLOOR</span><span class="body-zh" style="font-size:max(13px,.98vw)">Four labelled motor pairs on the perfboard.</span></span></div>
+      <div style="border-top:1px solid rgba(42,30,19,.25);padding:1.5vh 0;display:flex;gap:1.4vw" data-anim><span class="mid-num" style="font-size:2.2vw;line-height:1">4</span><span style="display:flex;flex-direction:column;gap:.6vh"><span class="meta" style="opacity:.6">FLUID DRIVE</span><span class="body-zh" style="font-size:max(13px,.98vw)">Four 12 V peristaltic pumps, heads down.</span></span></div>
+      <div style="border-top:1px solid rgba(42,30,19,.25);padding:1.5vh 0;display:flex;gap:1.4vw" data-anim><span class="mid-num" style="font-size:2.2vw;line-height:1">5</span><span style="display:flex;flex-direction:column;gap:.6vh"><span class="meta" style="opacity:.6">OUTLET</span><span class="body-zh" style="font-size:max(13px,.98vw)">Four tubes, four holes, one circle over the cup.</span></span></div>
+      <div style="border-top:1px solid rgba(42,30,19,.25);border-bottom:1px solid rgba(42,30,19,.25);padding:1.5vh 0;display:flex;gap:1.4vw" data-anim><span class="mid-num" style="font-size:2.2vw;line-height:1">6</span><span style="display:flex;flex-direction:column;gap:.6vh"><span class="meta" style="opacity:.6">SENSING</span><span class="body-zh" style="font-size:max(13px,.98vw)">1 kg bar cell under the platform; HX711 beside it.</span></span></div>
+    </div>
+    <div class="rowline" style="margin-top:3.6vh" data-anim>
+      <div class="k">Order</div>
+      <div class="v" style="font-family:var(--serif-zh);font-size:max(16px,1.35vw)">Assemble upward: base → pumps → board → drivers → Arduino.</div>
+      <div class="m">3 h</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>16 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 17 · PRINCIPLE SCHEMATIC ============ -->
+<section class="slide dark" data-slide-id="schematic">
+  <div class="chrome">
+    <div>Product Assembly Guide · Principle Schematic</div>
+    <div>17 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" style="margin-bottom:1.4vh" data-anim>PRODUCT ASSEMBLY GUIDE · PRINCIPLE SCHEMATIC</div>
+    <h2 class="h-xl" style="font-size:min(4.8vw,8.2vh)" data-anim>Power goes up. Signal comes down.</h2>
+    <div class="split" style="margin-top:1.4vh;align-items:start;flex:0 0 auto">
+      <div style="border:1px solid rgba(238,223,199,.25);border-radius:10px;padding:1.8vh 2vw;display:flex;flex-direction:column;gap:1.2vh" data-anim>
+        <div class="meta" style="opacity:.6">A · 12 V POWER TREE</div>
+        <div style="display:flex;align-items:center;gap:.8vw;flex-wrap:wrap;font-family:var(--mono);font-size:max(11px,.85vw);opacity:.85"><span>12VDC · 5A</span><span style="opacity:.4">→</span><span>3A fuse</span><span style="opacity:.4">→</span><span>lever block</span><span style="opacity:.4">→</span><span>+12V bus · GND bus</span><span style="opacity:.4">→</span><span>4 × DRV8871 (CH1–CH4)</span></div>
+        <div class="body-zh" style="font-size:max(13px,.98vw);opacity:.75">4 parallel branches. Fuse before the first branch; never chain a driver through another.</div>
+      </div>
+      <div style="border:1px solid rgba(238,223,199,.25);border-radius:10px;padding:1.8vh 2vw;display:flex;flex-direction:column;gap:1.2vh" data-anim>
+        <div class="meta" style="opacity:.6">B · SIGNAL AND SENSING</div>
+        <div style="display:flex;align-items:center;gap:.8vw;flex-wrap:wrap;font-family:var(--mono);font-size:max(11px,.85vw);opacity:.85"><span>USB · 115200 · kiosk</span><span style="opacity:.4">→</span><span>ARDUINO</span><span style="opacity:.4">→</span><span>D9D8 CH1 · D7D6 CH2 · D5D4 CH3 · D3D2 CH4</span><span style="opacity:.4">→</span><span>HX711 (D12 D13)</span><span style="opacity:.4">→</span><span>1 kg LOAD CELL</span></div>
+        <div class="body-zh" style="font-size:max(13px,.98vw);opacity:.75">Arduino is USB-powered — its GND ties to this block, it does not feed the motors. 8 logic wires set direction and on/off; 4 sensor wires carry the scale.</div>
+      </div>
+    </div>
+    <div class="rowline" style="margin-top:2vh;grid-template-columns:.6fr 3.4fr .6fr" data-anim>
+      <div class="k">Rule</div>
+      <div class="v" style="font-family:var(--serif-zh);font-size:max(16px,1.2vw)">The Arduino sets direction and state; the DRV8871 carries the current.</div>
+      <div class="m">12 V</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>17 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 18 · FLUID SCHEMATIC ============ -->
+<section class="slide light" data-slide-id="fluid">
+  <div class="chrome">
+    <div>Product Assembly Guide · Fluid Schematic</div>
+    <div>18 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PRODUCT ASSEMBLY GUIDE · FLUID SCHEMATIC</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>Four lines. One cup.</h2>
+    <div style="margin-top:3.4vh;display:grid;grid-template-columns:repeat(4,1fr) auto 1.2fr;gap:1.2vw;align-items:stretch" data-anim>
+      <div style="border-top:1px solid rgba(42,30,19,.3);padding-top:1.6vh;display:flex;flex-direction:column;gap:.6vh"><div class="meta" style="opacity:.6">COFFEE · P1</div><div class="body-zh" style="font-size:max(12px,.92vw)">500 ml · vented cap</div></div>
+      <div style="border-top:1px solid rgba(42,30,19,.3);padding-top:1.6vh;display:flex;flex-direction:column;gap:.6vh"><div class="meta" style="opacity:.6">MILK · P2</div><div class="body-zh" style="font-size:max(12px,.92vw)">500 ml · vented cap</div></div>
+      <div style="border-top:1px solid rgba(42,30,19,.3);padding-top:1.6vh;display:flex;flex-direction:column;gap:.6vh"><div class="meta" style="opacity:.6">TEA · P3</div><div class="body-zh" style="font-size:max(12px,.92vw)">500 ml · vented cap</div></div>
+      <div style="border-top:1px solid rgba(42,30,19,.3);padding-top:1.6vh;display:flex;flex-direction:column;gap:.6vh"><div class="meta" style="opacity:.6">COCONUT · P4</div><div class="body-zh" style="font-size:max(12px,.92vw)">500 ml · vented cap</div></div>
+      <div style="display:flex;align-items:center;justify-content:center;font-family:var(--serif-en);font-size:2vw;opacity:.4">→</div>
+      <div style="border:1px solid rgba(42,30,19,.3);border-radius:10px;padding:2vh 1.6vw;display:flex;flex-direction:column;gap:.8vh;justify-content:center">
+        <div class="meta" style="opacity:.6">PERISTALTIC PUMPS → SQUEEZE TUBES</div>
+        <div class="h-md" style="font-size:1.7vw">CUP · 75 ml</div>
+        <div class="body-zh" style="font-size:max(12px,.92vw)">on a 1 kg LOAD CELL</div>
+      </div>
+    </div>
+    <div style="margin-top:3.4vh;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6vw" data-anim>
+      <div class="stat-card"><div class="stat-label">No valves</div><div class="stat-note">The stopped rotor pinches the tube shut; a full machine does not drip.</div></div>
+      <div class="stat-card"><div class="stat-label">Equal tubes</div><div class="stat-note">Same outlet length on all four, or the first cup arrives unevenly.</div></div>
+      <div class="stat-card"><div class="stat-label">One hole each</div><div class="stat-note">A shared outlet siphons between lines; four holes stay independent.</div></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>18 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 19 · PHOTO SEQUENCE ============ -->
+<section class="slide dark" data-slide-id="photoseq">
+  <div class="chrome">
+    <div>Product Assembly Guide · Photo Sequence</div>
+    <div>19 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PRODUCT ASSEMBLY GUIDE · PHOTO SEQUENCE</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The build, in ten steps.</h2>
+    <div style="margin-top:3vh;display:grid;grid-template-columns:repeat(5,1fr);gap:1.2vw">
+      <div class="img-slot r-1x1" style="max-height:15vh" data-anim><span class="label">01 · motors under the board</span></div>
+      <div class="img-slot r-1x1" style="max-height:15vh" data-anim><span class="label">02 · pairs landed, labelled</span></div>
+      <div class="img-slot r-1x1" style="max-height:15vh" data-anim><span class="label">03 · four drivers, wired</span></div>
+      <div class="img-slot r-1x1" style="max-height:15vh" data-anim><span class="label">04 · 12V bus + 3A fuse</span></div>
+      <div class="img-slot r-1x1" style="max-height:15vh" data-anim><span class="label">05 · Arduino harness</span></div>
+      <div class="img-slot r-1x1" style="max-height:15vh" data-anim><span class="label">06 · both tubes per head</span></div>
+      <div class="img-slot r-1x1" style="max-height:15vh" data-anim><span class="label">07 · inlets into bottles</span></div>
+      <div class="img-slot r-1x1" style="max-height:15vh" data-anim><span class="label">08 · four holes, four tubes</span></div>
+      <div class="img-slot r-1x1" style="max-height:15vh" data-anim><span class="label">09 · cell + cup platform</span></div>
+      <div class="img-slot r-1x1" style="max-height:15vh" data-anim><span class="label">10 · HX711 + cable dress</span></div>
+    </div>
+    <div class="meta" style="margin-top:3.4vh;opacity:.55" data-anim>PHOTOS GO HERE — SEND THE TEN BUILD PHOTOS TO DROP INTO THESE SLOTS.</div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>19 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 20 · STEPS 1–5 ============ -->
+<section class="slide light" data-slide-id="steps1">
+  <div class="chrome">
+    <div>Product Assembly Guide · Steps 1–5</div>
+    <div>20 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PRODUCT ASSEMBLY GUIDE · STEPS 1–5</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The stack, close up.</h2>
+    <div class="grid-4" style="margin-top:2.8vh;align-content:start;gap:2.4vh 2vw;flex:0 0 auto">
+      <div class="pillar" data-anim>
+        <div class="ic">01</div>
+        <div class="t" style="font-size:1.7vw">Fluid drive</div>
+        <div class="d">Run two zip ties per motor through the board; heads facing the outlet.</div>
+      </div>
+      <div class="pillar" data-anim>
+        <div class="ic">02</div>
+        <div class="t" style="font-size:1.7vw">Wire floor</div>
+        <div class="d">Label CH1–CH4 first; red on +. A swap pours the wrong ingredient.</div>
+      </div>
+      <div class="pillar" data-anim>
+        <div class="ic">03</div>
+        <div class="t" style="font-size:1.7vw">Power stage</div>
+        <div class="d">Four DRV8871 on standoffs. 12 V taps in parallel; two logic wires each; motor on OUT1/OUT2.</div>
+      </div>
+      <div class="pillar" data-anim>
+        <div class="ic">05</div>
+        <div class="t" style="font-size:1.7vw">Control</div>
+        <div class="d">Arduino on top. Tie its GND to the driver block — the one wire people leave out.</div>
+      </div>
+    </div>
+    <div class="rowline" style="margin-top:2.8vh" data-anim>
+      <div class="k">Check</div>
+      <div class="v" style="font-family:var(--serif-zh);font-size:max(16px,1.3vw)">With 12 V unplugged, tug every Dupont shell and every motor terminal. No bare copper, no reversed tap, no short between +12 V and GND.</div>
+      <div class="m">dry</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>20 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 21 · STEPS 6–10 ============ -->
+<section class="slide dark" data-slide-id="steps2">
+  <div class="chrome">
+    <div>Product Assembly Guide · Steps 6–10</div>
+    <div>21 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PRODUCT ASSEMBLY GUIDE · STEPS 6–10</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The wet side, close up.</h2>
+    <div class="grid-4" style="margin-top:2.8vh;align-content:start;gap:2.4vh 2vw;flex:0 0 auto">
+      <div class="pillar" data-anim>
+        <div class="ic">06</div>
+        <div class="t" style="font-size:1.7vw">Plumb the heads</div>
+        <div class="d">Press each tube into the head until seated; 20 mm loop, no glue.</div>
+      </div>
+      <div class="pillar" data-anim>
+        <div class="ic">07</div>
+        <div class="t" style="font-size:1.7vw">Bottles</div>
+        <div class="d">Vent the cap, end the inlet 20 mm above the floor, and label every tube at the cap.</div>
+      </div>
+      <div class="pillar" data-anim>
+        <div class="ic">08</div>
+        <div class="t" style="font-size:1.7vw">Outlet</div>
+        <div class="d">One tube per hole, pushed 10 mm through, tip cut at 45°. Check the plate is level.</div>
+      </div>
+      <div class="pillar" data-anim>
+        <div class="ic">09</div>
+        <div class="t" style="font-size:1.7vw">Sensing</div>
+        <div class="d">Fixed end to the base, free end to the platform. Pads sit 1 mm clear as travel limiters.</div>
+      </div>
+    </div>
+    <div class="rowline" style="margin-top:2.8vh" data-anim>
+      <div class="k">Check</div>
+      <div class="v" style="font-family:var(--serif-zh);font-size:max(16px,1.3vw)">Pour water down each tube in turn — every stream lands inside the cup, none runs back along the plate. Only the tube touches the drink.</div>
+      <div class="m">wet</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>21 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 22 · CALIBRATION ============ -->
+<section class="slide light" data-slide-id="calibration">
+  <div class="chrome">
+    <div>Product Assembly Guide · Calibration</div>
+    <div>22 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>PRODUCT ASSEMBLY GUIDE · CALIBRATION AND FIRST RUN</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>Commissioning: dry, then wet.</h2>
+    <div class="tbl" style="margin-top:3.2vh;grid-template-columns:.7fr 1.3fr 2.6fr 1.2fr" data-anim>
+      <div class="tr th"><span>#</span><span>Stage</span><span>What to do</span><span>Pass</span></div>
+      <div class="tr"><span class="c1">1</span><span class="v">Dry check</span><span class="v">supply off: continuity + polarity everywhere</span><span class="m" style="opacity:1">no short</span></div>
+      <div class="tr"><span class="c1">2</span><span class="v">USB only</span><span class="v">upload; monitor at 115200</span><span class="m" style="opacity:1">READY</span></div>
+      <div class="tr"><span class="c1">3</span><span class="v">Scale</span><span class="v">tare, 100 g mass, CAL</span><span class="m" style="opacity:1">100 ±1 g</span></div>
+      <div class="tr"><span class="c1">4</span><span class="v">12 V</span><span class="v">plug the barrel jack; STATUS</span><span class="m" style="opacity:1">no reset</span></div>
+      <div class="tr"><span class="c1">5</span><span class="v">Direction</span><span class="v">5 g jog per channel, cup under outlet</span><span class="m">to the cup</span></div>
+      <div class="tr"><span class="c1">6</span><span class="v">Accuracy</span><span class="v">20 g per channel; catch and weigh</span><span class="m">18–22 g</span></div>
+      <div class="tr"><span class="c1">7</span><span class="v">Full recipe</span><span class="v">75 ml from the kiosk, four pumps</span><span class="m" style="opacity:1">±3 g</span></div>
+    </div>
+    <div style="margin-top:3vh;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6vw" data-anim>
+      <div class="stat-card"><div class="stat-label">Calibration, in plain words</div><div class="stat-note">Tare = what empty weighs. CAL = counts per gram. Both when assembled; stored in EEPROM.</div></div>
+      <div class="stat-card"><div class="stat-label">Expected timings</div><div class="stat-note">75 ml: mean 21.5 s · range 19–25 s · n = 10</div></div>
+      <div class="stat-card"><div class="stat-label">If it stops</div><div class="stat-note">NO FLOW — air · STALLED — pinch · SCALE LOST — D12 · HARD LIMIT — recalibrate</div></div>
+    </div>
+    <div class="meta" style="margin-top:3vh;opacity:.55" data-anim>ONE NEW RISK PER STAGE: LOGIC, THEN POWER, THEN WATER, THEN INGREDIENTS.</div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>22 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 23 · BOM ============ -->
+<section class="slide dark" data-slide-id="bom">
+  <div class="chrome">
+    <div>Product Assembly Guide · Parts and Provenance</div>
+    <div>23 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" style="margin-bottom:1.4vh" data-anim>PRODUCT ASSEMBLY GUIDE · PARTS AND PROVENANCE</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>Bill of materials, and what we bought.</h2>
+    <div class="grid-2-7-5" style="margin-top:1.6vh;align-items:start">
+      <div class="tbl tiny" style="grid-template-columns:2.4fr .8fr 1.2fr" data-anim>
+        <div class="tr th"><span>Part</span><span>Qty</span><span>As bought</span></div>
+        <div class="tr"><span class="c1">LEFOO LFP203DB pump, 12V 5W</span><span class="v">4</span><span class="m">6 × ¥78</span></div>
+        <div class="tr"><span class="c1">DRV8871 H-bridge, 3.6 A</span><span class="v">4</span><span class="m">5 × ¥7.85</span></div>
+        <div class="tr"><span class="c1">Arduino Uno R3</span><span class="v">1</span><span class="m">owned</span></div>
+        <div class="tr"><span class="c1">HX711 + 1 kg bar load cell</span><span class="v">1</span><span class="m">¥18.15</span></div>
+        <div class="tr"><span class="c1">12V 5A supply</span><span class="v">1</span><span class="m">—</span></div>
+        <div class="tr"><span class="c1">3A fuse + lever block + splitter</span><span class="v">1 set</span><span class="m">¥30</span></div>
+        <div class="tr"><span class="c1">Silicone tube 3.2 × 6.4 mm (16#)</span><span class="v">4 m</span><span class="m">¥44</span></div>
+        <div class="tr"><span class="c1">Acrylic plates + M3 standoffs</span><span class="v">5</span><span class="m">cut</span></div>
+        <div class="tr"><span class="c1">Dupont 40P, ties, pads</span><span class="v">1 set</span><span class="m">¥9</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2vh" data-anim>
+        <div class="img-slot r-4x3" style="max-height:15vh"><span class="label">The purchase record · 5 screenshots</span></div>
+        <div class="meta" style="opacity:.6;line-height:1.8">TOOLS THAT MATTER · STRIPPER · MULTIMETER · SCISSORS · 4/6.5 MM DRILL · LABEL TAPE.<br>The first two prevent most faults.</div>
+      </div>
+    </div>
+    <div class="meta" style="margin-top:1.6vh;opacity:.6" data-anim>TAOBAO/TMALL ORDERS, OCTOBER 2026: PUMPS, DRIVERS, CELL, TUBE, WIRE, CONNECTORS, TOOLS. AS BUILT: A 1 KG CELL, NOT 5 KG, AND FOUR DISCRETE DRV8871 BOARDS, NOT ONE 4-CHANNEL MOSFET BOARD. A 5 KG CELL WIRES IDENTICALLY — RECALIBRATE AND RAISE THE HARD LIMIT.</div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>23 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 24 · REFLECTION ============ -->
+<section class="slide light" data-slide-id="reflection">
+  <div class="chrome">
+    <div>Reflection and Future Improvements · 15%</div>
+    <div>24 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>REFLECTION AND FUTURE IMPROVEMENTS</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>What we would do differently.</h2>
+    <div style="margin-top:3.4vh;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6vw" data-anim>
+      <div style="border-top:1px solid rgba(42,30,19,.3);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh">
+        <div class="meta" style="opacity:.6">KEEP</div>
+        <div class="body-zh" style="font-size:max(13px,.98vw)">one source of truth for recipes · the 75 ml check at the boundary · demo mode as a safety contract · no app, no account</div>
+      </div>
+      <div style="border-top:1px solid rgba(42,30,19,.3);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh">
+        <div class="meta" style="opacity:.6">CHANGE</div>
+        <div class="body-zh" style="font-size:max(13px,.98vw)">build the pump adapter earlier · test with real users sooner · write the manual while building · freeze the demo a week early</div>
+      </div>
+      <div style="border-top:1px solid rgba(42,30,19,.3);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh">
+        <div class="meta" style="opacity:.6">NEXT</div>
+        <div class="body-zh" style="font-size:max(13px,.98vw)">calibrate each ingredient · a stirrer: one homogeneous cup · emotion-aware mix, with consent · payment + a second station</div>
+      </div>
+    </div>
+    <div style="margin-top:3.4vh;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4vw" data-anim>
+      <div class="stat-card"><div class="stat-label">v1.0 · NOW</div><div class="stat-note">ordering + pump tests</div></div>
+      <div class="stat-card"><div class="stat-label">v1.1</div><div class="stat-note">ingredient calibration</div></div>
+      <div class="stat-card"><div class="stat-label">v1.2</div><div class="stat-note">calibration + payment</div></div>
+      <div class="stat-card"><div class="stat-label">v2.0</div><div class="stat-note">multi-station</div></div>
+    </div>
+    <div class="rowline" style="margin-top:3.4vh" data-anim>
+      <div class="k">Evidence</div>
+      <div class="v" style="font-family:var(--serif-zh);font-size:max(16px,1.3vw)">Ordering is live and ten full pump runs are complete. Stirrer and emotion-aware mix remain v2 — designed, not shipped.</div>
+      <div class="m">roadmap</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>24 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 25 · THANK YOU ============ -->
+<section class="slide hero dark" data-animate="hero" data-slide-id="thanks">
+  <div class="chrome">
+    <div>Thank You · Questions</div>
+    <div>25 / 27</div>
+  </div>
+  <div class="frame" style="display:grid;grid-template-columns:1.4fr 1fr;gap:4vw;align-content:center;min-height:80vh">
+    <div style="display:flex;flex-direction:column;gap:3vh">
+      <div class="kicker" data-anim>THANK YOU · QUESTIONS</div>
+      <h1 class="h-hero h-hero-en" style="font-size:min(7.6vw,12.4vh);line-height:1" data-anim>Scan.<br>Sip.<br>Repeat.</h1>
+      <p class="lead" style="max-width:44ch" data-anim>Four pumps. Twenty recipes. One 75 ml cup. One public page, no app, no account.</p>
+      <div class="meta-row" data-anim><span>4 pumps</span><span>·</span><span>20 recipes</span><span>·</span><span>75 ml</span><span>·</span><span>no app</span></div>
+      <div class="meta-row" data-anim><span>ERIC GONG · INT4089 · 27 NOV 2026</span><span>·</span><span>eric-gong.com/sip</span></div>
+    </div>
+    <figure class="frame-img r-1x1 fit-contain" data-anim style="max-height:52vh">
+      <img src="images/qr-code.png" alt="QR code to the sip. ordering page">
+      <figcaption class="img-cap">Scan to order</figcaption>
+    </figure>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>25 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 26 · APPENDIX · EVIDENCE ============ -->
+<section class="slide light" data-slide-id="evidence">
+  <div class="chrome">
+    <div>Appendix · Product Evidence</div>
+    <div>26 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>APPENDIX · PRODUCT EVIDENCE</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The interface, as shipped.</h2>
+    <div class="split" style="margin-top:3.4vh;align-items:start">
+      <figure class="frame-img r-16x9" data-anim>
+        <img src="images/07-site.png" alt="Screenshot of the public ordering page">
+        <figcaption class="img-cap">Public ordering page · 20 recipes, live ingredient ratios, 75 ml fixed cup</figcaption>
+      </figure>
+      <figure class="frame-img r-16x9" data-anim>
+        <div class="img-slot r-16x9" style="max-height:100%;aspect-ratio:auto"><span class="label">Cup panel · 30/45 ml split · 40/60</span></div>
+      </figure>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>26 / 27</div>
+  </div>
+</section>
+
+<!-- ============ 27 · REFERENCES ============ -->
+<section class="slide dark" data-slide-id="references">
+  <div class="chrome">
+    <div>Appendix · APA 7th Edition</div>
+    <div>27 / 27</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker" data-anim>APPENDIX · APA 7TH EDITION</div>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>References.</h2>
+    <div class="split" style="margin-top:3vh;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:1.2vh" data-anim>
+        <div class="meta" style="opacity:.55">ACADEMIC SOURCES</div>
+        <div class="body-zh" style="font-size:max(11px,.82vw);line-height:1.6;opacity:.75">Åström, K. J., &amp; Murray, R. M. (2008). <em>Feedback systems: An introduction for scientists and engineers.</em> Princeton University Press.<br>Beyer, H., &amp; Holtzblatt, K. (1998). <em>Contextual design: Defining customer-centered systems.</em> Morgan Kaufmann.<br>Bybee, R. W. (2013). <em>The case for STEM education: Challenges and opportunities.</em> NSTA Press.<br>Dym, C. L., Agogino, A. M., Eris, O., Frey, D. D., &amp; Leifer, L. J. (2005). Engineering design thinking, teaching, and learning. <em>Journal of Engineering Education, 94</em>(1), 103–120. https://doi.org/10.1002/j.2168-9830.2005.tb00832.x<br>Hmelo-Silver, C. E. (2004). Problem-based learning: What and how do students learn? <em>Educational Psychology Review, 16</em>(3), 235–266. https://doi.org/10.1023/B:EDPR.0000034022.16470.f3<br>Picard, R. W. (1997). <em>Affective computing.</em> MIT Press.<br>World Health Organization. (2015). <em>Guideline: Sugars intake for adults and children.</em> WHO.<br>Yakman, G. (2008). STEAM education: An overview of creating a model of integrative education. In <em>Proceedings of the PATT-19 Conference.</em></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.2vh" data-anim>
+        <div class="meta" style="opacity:.55">TECHNICAL SOURCES</div>
+        <div class="body-zh" style="font-size:max(11px,.82vw);line-height:1.6;opacity:.75">Arduino. (2024). <em>Arduino Uno R3 product reference manual.</em> https://docs.arduino.cc/hardware/uno-rev3<br>Avia Semiconductor. (n.d.). <em>HX711 24-bit ADC for weigh scales</em> [Datasheet].<br>LEFOO. (n.d.). <em>LFP203DB peristaltic pump</em> [Datasheet].<br>Node.js contributors. (2024). <em>Node.js v22 documentation.</em> https://nodejs.org/docs/latest-v22.x/api/<br>OWASP Foundation. (n.d.). <em>Secrets management cheat sheet.</em> https://cheatsheetseries.owasp.org</div>
+        <div class="meta" style="opacity:.55;margin-top:2vh">COURSE MATERIALS</div>
+        <div class="body-zh" style="font-size:max(11px,.82vw);line-height:1.6;opacity:.75">INT4089 (2026). <em>Technologies in STEM and AI education.</em> Lecture 2: Engineering design; Group project assessment guidelines; Activity sheet 01: Product design handbook.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>sip. · INT4089 · Group Project</div>
+    <div>27 / 27</div>
   </div>
 </section>
 
@@ -939,117 +1616,139 @@
 <script>
 const SPEAKER_NOTES = [
   {
-    id: 'cover', title: 'sip. — Four pumps, one good cup', section: 'Opening', minutes: 0.6,
-    purpose: 'Land the one-line pitch before any detail.',
-    talk: [
-      'Introduce sip. as four pumps behind one counter.',
-      'Name the four: coffee, milk, black tea, coconut water.',
-      'Tease the twenty-drink menu and the fixed 150 ml cup.'
-    ],
-    transition: 'Before the menu, set the scene: how everyone feels at the end of the day.',
-    cue: 'Let the video play once; it holds on the last frame. Gesture at the machine on the left.',
-    delivery: 'Warm and unhurried - cafe energy, not a tech keynote.'
+    id: 'cover', title: 'sip. — cover', section: 'Opening', minutes: 0.5,
+    purpose: 'Land the one-line pitch and the live-demo promise.',
+    talk: ['Introduce sip. as a four-pump drink machine, designed like a system.', 'Flag the live demo: scan, build, order, 10–15 minutes.', 'Point at eric-gong.com/sip.']
   },
   {
-    id: 'the-world', title: 'The world today', section: 'Opening', minutes: 0.8,
-    purpose: 'Make the audience recognise their own tired, end-of-day feeling.',
-    talk: [
-      'Everyone ends the day the same way — tired, thirsty.',
-      'What is on offer never changes: the same cans, the same fixed menus.',
-      'Frame the gap: nothing mixes a fresh drink for you, on the spot.'
-    ],
-    transition: 'That gap is the problem we solve.',
-    cue: 'Small pause after the second line of the quote.'
+    id: 'try-first', title: 'Try it before we begin', section: 'Opening', minutes: 1.5,
+    purpose: 'Get every phone on the live page before any theory.',
+    talk: ['The machine is live; the phone is the menu.', 'No app, no account, any phone.', 'The audience builds a cup while you talk.']
   },
   {
-    id: 'the-problem', title: 'Mixed drinks, anytime, anywhere', section: 'Opening', minutes: 1.0,
-    purpose: 'State the problem plainly: people want mixed drinks, anywhere, anytime.',
-    talk: [
-      'A real mixed drink needs a barista, a queue and a menu you did not write.',
-      'Cafés close; vending machines pour the same fixed cans.',
-      'No machine mixes a fresh cup on the spot — yet.'
-    ],
-    transition: 'That is exactly what we built.',
-    cue: 'Point at the photo; contrast fixed options with a personal mix.'
+    id: 'problem', title: 'The break is short', section: 'Problem', minutes: 1.0,
+    purpose: 'State the problem: who, what, why.',
+    talk: ['Queues eat the break; menus ignore bodies.', 'The cup hides what is in it; the machine learns nothing.', 'Cite the 48 g sugar tea headline as evidence.']
   },
   {
-    id: 'product', title: 'Meet sip.', section: 'The Product', minutes: 0.6,
-    purpose: 'Introduce the product in one breath.',
-    talk: [
-      'Four pumps: coffee, milk, black tea, coconut water.',
-      'Twenty house drinks, every cup 150 ml, ordered ahead.',
-      'The tagline is the whole product: four pumps in, one good cup out.'
-    ],
-    transition: 'Show what the menu actually looks like.',
-    delivery: 'Slow down on the tagline.'
+    id: 'sugar', title: 'What the cup does not say', section: 'Problem', minutes: 1.0,
+    purpose: 'Quantify the gap: sugar, and the missing mood input.',
+    talk: ['Cola 15.9 g vs black tea 0 g — the cup never says.', 'The missing input is how you feel; v2 maps a selfie to a recipe, with consent.', 'Health, social science and pedagogy each support one sentence.']
   },
   {
-    id: 'menu', title: 'One menu, four ratios', section: 'The Product', minutes: 1.0,
-    purpose: 'Make the twenty-drink menu concrete.',
-    talk: [
-      'Seven coffee drinks, five teas, two coconut, six signatures.',
-      'Read a few: Flat White 40/60, Yuanyang 30/20/50.',
-      'Every percentage is 1.5 ml — the cup never leaves 150 ml.'
-    ],
-    transition: 'Next, what the machine and the software actually do.',
-    cue: 'Read the four category names, then a ratio or two.'
+    id: 'landscape', title: 'Everyone sells drinks', section: 'Research', minutes: 1.0,
+    purpose: 'Position sip. against the alternatives.',
+    talk: ['Café, vending machine, open-source rig — all pour a drink.', 'Only sip. can say what is in the cup; none read the person.']
   },
   {
-    id: 'do-hardware', title: 'A counter that pours', section: 'The Product', minutes: 0.9,
-    purpose: 'Show what the hardware does, before how it was built.',
-    talk: [
-      'Four pumps hold coffee, milk, black tea and coconut water.',
-      'One Arduino opens the right pump at the right moment.',
-      'Every cup lands at exactly 150 ml.'
-    ],
-    transition: 'The hardware is only half the story — the software is the other half.'
+    id: 'capabilities', title: 'What we have that they do not', section: 'Research', minutes: 1.2,
+    purpose: 'Show the capability matrix and the v2 row.',
+    talk: ['Walk the six rows; sip. is the only YES column end to end.', 'The v2 mood row is designed, not shipped.']
   },
   {
-    id: 'do-software', title: 'A menu that takes orders', section: 'The Product', minutes: 1.3,
-    purpose: 'Show the software working, then demo it live.',
-    talk: [
-      'Browse twenty drinks or build your own in the Mix Lab.',
-      'Order ahead and collect with a six-digit code.',
-      'Open the live link and walk the audience through a real order.'
-    ],
-    transition: 'Now show what it took to build it.',
-    cue: 'Click the live link and order a Flat White together.',
-    fallback: 'If there is no internet, describe the flow from the slide and show the screenshot.'
+    id: 'stem', title: 'Five STEM letters', section: 'Research', minutes: 1.2,
+    purpose: 'Map each STEM letter to a real decision.',
+    talk: ['S chemistry, T protocol, E design loop, A interface, M limits.', '4Cs became roles; Industry 4.0 shows in the relay and weight loop.']
   },
   {
-    id: 'build-hardware', title: 'How we built it — hardware', section: 'The Build', minutes: 1.2,
-    purpose: 'Show the engineering skills behind the rig.',
-    talk: [
-      'The mechanism is modelled in SolidWorks, then 3D-printed as a shell.',
-      'An Arduino Uno drives four pumps through MOSFETs.',
-      'A load cell and power supply complete the loop.',
-      'BOM lands around ¥550–700.'
-    ],
-    transition: 'Hardware is half the story — the software is the other half.',
-    cue: 'Point at each part photo, then at the SolidWorks render on the right.'
+    id: 'edp', title: 'The EDP on one page', section: 'Design', minutes: 1.2,
+    purpose: 'Show the engineering design process was actually used.',
+    talk: ['Eight stages, two loops, with artifacts per stage.', 'The loops are where the learning happened.']
   },
   {
-    id: 'build-software', title: 'How we built it — software', section: 'The Build', minutes: 1.2,
-    purpose: 'Show the software flow end to end.',
-    talk: [
-      'The customer page is a laptop-friendly web app — no install.',
-      'Orders go to a cloud server running FastAPI.',
-      'The counter issues a six-digit code; the Arduino only pours for a valid code.',
-      'The payload is four pump volumes in millilitres.'
-    ],
-    transition: 'Close by inviting everyone to try it.',
-    cue: 'Advance the pipeline one step at a time with the arrow keys.'
+    id: 'concepts', title: 'Three concepts', section: 'Design', minutes: 1.2,
+    purpose: 'Show the decision matrix, not just the chosen design.',
+    talk: ['A gravity tap, B carousel, C four fixed pumps.', 'C won 4.05/5: the recipe becomes data instead of mechanics.']
   },
   {
-    id: 'try-it', title: 'Take a sip', section: 'Close', minutes: 0.6,
-    purpose: 'Invite everyone to try the machine and ask questions.',
-    talk: [
-      'Invite the audience to the counter.',
-      'The QR code opens the ordering page on their phone.',
-      'Open the floor for questions.'
-    ],
-    transition: 'No next page — hold for questions.',
-    cue: 'Point at the QR code, then step away from the slides.'
+    id: 'rejections', title: 'Three roads not taken', section: 'Design', minutes: 1.0,
+    purpose: 'Show rejected prototypes and the reason each time.',
+    talk: ['Valves leaked and drained lines; the Pi was a second machine; flat panels could not hold pumps.', 'Every rejection moved complexity into software.']
+  },
+  {
+    id: 'frameworks', title: 'Frameworks used', section: 'Design', minutes: 1.0,
+    purpose: 'Prove the course frameworks made decisions.',
+    talk: ['EDP, 4Cs, decision matrix, Arduino — each tied to an artifact.', 'None was added as decoration.']
+  },
+  {
+    id: 'architecture', title: 'Two computers, one trust boundary', section: 'Design', minutes: 1.2,
+    purpose: 'Explain the security architecture.',
+    talk: ['Phone → HTTPS → public relay VPS → outbound-only station → pumps.', 'The relay never touches a pump; no inbound port; PUMP_MODE=demo.']
+  },
+  {
+    id: 'weighs', title: 'It weighs', section: 'Prototyping', minutes: 1.2,
+    purpose: 'Present the measured evaluation evidence.',
+    talk: ['75 g target, closed loop, +12 g hard limit.', '10/10 full runs, 2.1% mean error, 21.5 s mean time.']
+  },
+  {
+    id: 'pinmap', title: "The Arduino's reflex", section: 'Prototyping', minutes: 1.2,
+    purpose: 'Show the firmware contract.',
+    talk: ['Pin map: channel = driver board, ingredient = tube.', 'Serial protocol and the dispense cycle; faults drive outputs low.']
+  },
+  {
+    id: 'tests', title: 'What passed', section: 'Prototyping', minutes: 1.2,
+    purpose: 'Present the test table and fault guards.',
+    talk: ['T1–T6, including injected faults; T6 is ten physical recipes.', 'Every guard was exercised; the kiosk reports the reason.']
+  },
+  {
+    id: 'layers', title: 'Four layers, ten steps', section: 'Assembly', minutes: 1.2,
+    purpose: 'Overview the assembly guide.',
+    talk: ['Control, power stage, wire floor, fluid drive, outlet, sensing.', 'Assemble upward: base → pumps → board → drivers → Arduino. Three hours.']
+  },
+  {
+    id: 'schematic', title: 'Principle schematic', section: 'Assembly', minutes: 1.0,
+    purpose: 'Explain power tree and signal paths.',
+    talk: ['Power goes up: 12 V tree with a fuse before the first branch.', 'Signal comes down: 8 logic wires, 4 sensor wires. The Arduino never drives a motor.']
+  },
+  {
+    id: 'fluid', title: 'Fluid schematic', section: 'Assembly', minutes: 1.0,
+    purpose: 'Explain the wet path.',
+    talk: ['Four lines, one cup, no valves.', 'Equal tube lengths, independent outlet holes, rotor-pinch sealing.']
+  },
+  {
+    id: 'photoseq', title: 'The build in ten steps', section: 'Assembly', minutes: 1.0,
+    purpose: 'Show the physical build as evidence.',
+    talk: ['Walk the ten photos top to bottom.', 'Motors under the board, drivers, harness, plumbing, sensing.']
+  },
+  {
+    id: 'steps1', title: 'Steps 1–5', section: 'Assembly', minutes: 1.0,
+    purpose: 'Close-up of the electrical build.',
+    talk: ['Fluid drive, wire floor, power stage, control.', 'Dry check: tug every connector; no shorts between +12 V and GND.']
+  },
+  {
+    id: 'steps2', title: 'Steps 6–10', section: 'Assembly', minutes: 1.0,
+    purpose: 'Close-up of the plumbing.',
+    talk: ['Heads, bottles, outlet, sensing.', 'Wet check: every stream lands in the cup; only the tube touches the drink.']
+  },
+  {
+    id: 'calibration', title: 'Calibration and first run', section: 'Assembly', minutes: 1.2,
+    purpose: 'Show commissioning is dry first, then wet.',
+    talk: ['Seven stages, one new risk per stage: logic, power, water, ingredients.', 'Tare and CAL live in EEPROM; timings from the ten runs.']
+  },
+  {
+    id: 'bom', title: 'Bill of materials', section: 'Assembly', minutes: 1.0,
+    purpose: 'Show what was bought and what it cost.',
+    talk: ['Pumps, drivers, cell, tube, acrylic — Taobao/Tmall, October 2026.', 'As built: 1 kg cell and four discrete DRV8871 boards.']
+  },
+  {
+    id: 'reflection', title: 'What we would do differently', section: 'Close', minutes: 1.2,
+    purpose: 'Honest reflection plus a roadmap.',
+    talk: ['Keep, change, next — each column is evidence-based.', 'Roadmap: v1.0 now → v2.0 multi-station. Stirrer and emotion-aware mix stay v2.']
+  },
+  {
+    id: 'thanks', title: 'Scan. Sip. Repeat.', section: 'Close', minutes: 0.5,
+    purpose: 'Close on the experience and open questions.',
+    talk: ['Four pumps, twenty recipes, one 75 ml cup.', 'Scan the code; try it live; questions welcome.']
+  },
+  {
+    id: 'evidence', title: 'Product evidence', section: 'Appendix', minutes: 0.5,
+    purpose: 'Show the shipped interface.',
+    talk: ['Public ordering page with live ratios and a fixed 75 ml cup.', 'Cup panel showing a 30/45 ml split.']
+  },
+  {
+    id: 'references', title: 'References', section: 'Appendix', minutes: 0.3,
+    purpose: 'APA references for coursework.',
+    talk: ['Academic, technical and course material sources.']
   }
 ];
 window.__SPEAKER_NOTES__ = SPEAKER_NOTES;
@@ -1942,3 +2641,4 @@ if(motion){
 
 </body>
 </html>
+
