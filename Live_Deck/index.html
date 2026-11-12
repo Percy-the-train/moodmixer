@@ -190,7 +190,7 @@
   figure.tile{display:flex;flex-direction:column;margin:0;min-width:0}
   figure.tile > .frame-img{flex:0 0 auto}
 
-  /* ============ 3D model stage (Three.js) ============ */
+  /* ============ 2D model render ============ */
   .model-stage{
     background:radial-gradient(120% 120% at 30% 18%, #fff8ea 0%, #ecdcc0 48%, #d8c19c 100%);
     border:1px solid rgba(42,30,19,.14);
@@ -200,22 +200,6 @@
     border-color:rgba(238,223,199,.18);
   }
   .model-view{position:relative;flex:1 1 auto;min-height:0;width:100%;overflow:hidden;background:url(images/08-model.png) center/contain no-repeat}
-  .model-view.model-live{background-image:none}
-  .model-view canvas{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
-  .model-view canvas:active{cursor:grabbing}
-  .model-badge,.model-hint{
-    position:absolute;bottom:1.1vh;z-index:2;pointer-events:none;
-    font-family:var(--mono);font-size:max(9px,.66vw);letter-spacing:.18em;
-    text-transform:uppercase;opacity:.6;
-  }
-  .model-badge{left:1.1vw}
-  .model-hint{right:1.1vw;opacity:.45}
-  .model-view:not(.model-live) .model-hint{display:none}
-  body.low-power .model-hint{display:none}
-  .model-fallback{
-    position:absolute;inset:0;display:none;align-items:center;justify-content:center;
-    font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.55;
-  }
 
   /* ============ Video cover ============ */
   .slide.video-cover{background:var(--ink)}
@@ -852,13 +836,8 @@
       <div class="meta-row" data-anim style="margin-top:.4vh"><span>3D model</span><span>·</span><span>145 × 544 × 145 mm</span><span>·</span><span>STL</span></div>
     </div>
     <figure class="frame-img r-4x3 model-stage" data-anim style="margin-top:2vh">
-      <div class="model-view">
-        <canvas id="drinkmech-canvas" aria-label="Interactive 3D model of the sip. drink mechanism"></canvas>
-        <div class="model-badge">drinkMech_fin.STL · 35,405 tris</div>
-        <div class="model-hint">Drag to orbit</div>
-        <div class="model-fallback">3D view unavailable</div>
-      </div>
-      <figcaption class="img-cap">Drink mechanism · 3D model</figcaption>
+      <div class="model-view" role="img" aria-label="3D render of the sip. drink mechanism"></div>
+      <figcaption class="img-cap">Drink mechanism · render</figcaption>
     </figure>
   </div>
   <div class="foot">
@@ -1110,7 +1089,7 @@ const SPEAKER_NOTES = [
       'BOM lands around ¥550–700.'
     ],
     transition: 'Hardware needs software — show how the layers fit.',
-    cue: 'Drag the 3D model to show the mechanism, then point at the component list.'
+    cue: 'Point at the mechanism render, then at the component list.'
   },
   {
     id: 'stack', title: 'Four layers, one pour', section: 'Hardware', minutes: 1.0,
@@ -2038,179 +2017,5 @@ if(motion){
 })();
 </script>
 
-<script type="importmap">
-{
-  "imports": {
-    "three": "./vendor/three/three.module.js"
-  }
-}
-</script>
-<script type="module">
-import * as THREE from 'three';
-import { STLLoader } from './vendor/three/STLLoader.js';
-import { OrbitControls } from './vendor/three/OrbitControls.js';
-import { RoomEnvironment } from './vendor/three/RoomEnvironment.js';
-
-(() => {
-  const canvas = document.getElementById('drinkmech-canvas');
-  if (!canvas) return;
-  const wrap = canvas.parentElement;
-  const fallback = wrap.querySelector('.model-fallback');
-  const deckSlides = Array.from(document.querySelectorAll('#deck .slide'));
-  const slideIndex = deckSlides.indexOf(canvas.closest('.slide'));
-
-  let renderer;
-  try {
-    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
-  } catch (err) {
-    if (fallback) fallback.style.display = 'flex';
-    return;
-  }
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-  renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.02;
-
-  const scene = new THREE.Scene();
-  const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-
-  scene.add(new THREE.HemisphereLight(0xfff1dc, 0x2a1e13, 1.05));
-  const key = new THREE.DirectionalLight(0xffe2b8, 2.5);
-  key.position.set(2.6, 3.6, 2.2);
-  scene.add(key);
-  const fill = new THREE.DirectionalLight(0xc9d8ff, 1.0);
-  fill.position.set(-2.6, 1.2, 1.6);
-  scene.add(fill);
-  const rim = new THREE.DirectionalLight(0xffcf96, 1.9);
-  rim.position.set(-1.6, 1.4, -2.8);
-  scene.add(rim);
-
-  const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 5000);
-  const controls = new OrbitControls(camera, canvas);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.08;
-  controls.enablePan = false;
-  controls.rotateSpeed = 0.85;
-  controls.zoomSpeed = 0.8;
-  controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.5;
-
-  const state = { mesh: null, dist: 0, ready: false };
-
-  function applyStaticView() {
-    if (!state.ready) return;
-    state.mesh.rotation.set(0, -0.18, 0);
-    camera.position.set(state.dist * 0.58, state.dist * 0.34, state.dist * 0.76);
-    controls.target.set(0, 0, 0);
-    controls.update();
-  }
-
-  function syncLowPower() {
-    const on = !!window.__lowPowerMode;
-    controls.autoRotate = !on;
-    if (on) applyStaticView();
-  }
-  syncLowPower();
-  window.addEventListener('ppt-low-power-change', (e) => {
-    const on = !!(e.detail && e.detail.on);
-    controls.autoRotate = !on;
-    if (on) applyStaticView();
-  });
-
-  function makeShadowTexture() {
-    const c = document.createElement('canvas');
-    c.width = c.height = 256;
-    const ctx = c.getContext('2d');
-    const g = ctx.createRadialGradient(128, 128, 8, 128, 128, 128);
-    g.addColorStop(0, 'rgba(42,30,19,0.52)');
-    g.addColorStop(0.5, 'rgba(42,30,19,0.2)');
-    g.addColorStop(1, 'rgba(42,30,19,0)');
-    ctx.fillStyle = g;
-    ctx.fillRect(0, 0, 256, 256);
-    const tex = new THREE.CanvasTexture(c);
-    tex.colorSpace = THREE.SRGBColorSpace;
-    return tex;
-  }
-
-  new STLLoader().load('./models/drinkMech_fin.STL', (geo) => {
-    geo.computeVertexNormals();
-    geo.computeBoundingBox();
-    const center = new THREE.Vector3();
-    geo.boundingBox.getCenter(center);
-    geo.translate(-center.x, -center.y, -center.z);
-    geo.computeBoundingBox();
-
-    const bb = geo.boundingBox;
-    const size = new THREE.Vector3();
-    bb.getSize(size);
-    const radius = Math.max(size.x, size.y, size.z) * 0.5;
-
-    const material = new THREE.MeshStandardMaterial({
-      color: 0xc79a63,
-      metalness: 0.34,
-      roughness: 0.36,
-      envMapIntensity: 1.15
-    });
-    const mesh = new THREE.Mesh(geo, material);
-    scene.add(mesh);
-
-    const edges = new THREE.LineSegments(
-      new THREE.EdgesGeometry(geo, 40),
-      new THREE.LineBasicMaterial({ color: 0x3a2a1d, transparent: true, opacity: 0.26 })
-    );
-    mesh.add(edges);
-
-    const shadowSize = Math.max(size.x, size.z) * 2.2;
-    const shadow = new THREE.Mesh(
-      new THREE.PlaneGeometry(shadowSize, shadowSize),
-      new THREE.MeshBasicMaterial({ map: makeShadowTexture(), transparent: true, depthWrite: false, opacity: 0.85 })
-    );
-    shadow.rotation.x = -Math.PI / 2;
-    shadow.position.y = bb.min.y + 0.5;
-    scene.add(shadow);
-
-    const fov = THREE.MathUtils.degToRad(camera.fov);
-    const dist = (radius / Math.sin(fov / 2)) * 1.10;
-    state.mesh = mesh;
-    state.dist = dist;
-    state.ready = true;
-
-    camera.near = Math.max(0.05, dist / 250);
-    camera.far = dist * 60;
-    camera.updateProjectionMatrix();
-    controls.target.set(0, 0, 0);
-    controls.minDistance = dist * 0.55;
-    controls.maxDistance = dist * 2.4;
-    camera.position.set(dist * 0.58, dist * 0.34, dist * 0.76);
-    controls.update();
-
-    syncLowPower();
-    resize();
-    renderer.render(scene, camera);
-    wrap.classList.add('model-live');
-  }, undefined, (err) => {
-    console.error('drinkMech STL failed to load', err);
-    if (fallback) fallback.style.display = 'flex';
-  });
-
-  function resize() {
-    const w = Math.max(1, wrap.clientWidth);
-    const h = Math.max(1, wrap.clientHeight);
-    renderer.setSize(w, h, false);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-  }
-  if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap);
-  window.addEventListener('resize', resize);
-  resize();
-
-  renderer.setAnimationLoop(() => {
-    if (window.__currentSlideIndex !== slideIndex) return;
-    controls.update();
-    renderer.render(scene, camera);
-  });
-})();
-</script>
 </body>
 </html>
