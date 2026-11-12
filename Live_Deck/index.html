@@ -834,27 +834,15 @@
         <h2 class="h-xl" style="font-size:min(4vw,7vh)" data-anim>Designed in SolidWorks.<br>Printed, wired, pumped.</h2>
         <p class="lead" style="margin-top:1.4vh;max-width:46ch" data-anim>The mechanism starts as a SolidWorks model, becomes a printed shell, and is driven by an Arduino Uno with four pumps.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2vw" data-anim>
-        <div style="display:flex;flex-direction:column;gap:.6vh">
-          <div class="img-slot r-1x1" style="max-height:11vh"><span class="label">SolidWorks 3D model</span></div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:.6vh">
-          <div class="img-slot r-1x1" style="max-height:11vh"><span class="label">3D-printed shell</span></div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:.6vh">
-          <div class="img-slot r-1x1" style="max-height:11vh"><span class="label">Arduino Uno</span></div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:.6vh">
-          <div class="img-slot r-1x1" style="max-height:11vh"><span class="label">4× pumps</span></div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:.6vh">
-          <div class="img-slot r-1x1" style="max-height:11vh"><span class="label">MOSFET driver + PSU</span></div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:.6vh">
-          <div class="meta" style="opacity:.62">HX711 load cell</div>
-        </div>
-      </div>
-      <div class="meta-row" data-anim><span>SolidWorks</span><span>·</span><span>Arduino Uno</span><span>·</span><span>~¥550–700 BOM</span></div>
+      <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 2.4vw;margin-top:.6vh" data-anim>
+        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>SolidWorks 3D model</span><span class="meta" style="opacity:.45">design</span></li>
+        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>3D-printed shell</span><span class="meta" style="opacity:.45">frame</span></li>
+        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>Arduino Uno</span><span class="meta" style="opacity:.45">control</span></li>
+        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>4× pumps</span><span class="meta" style="opacity:.45">pour</span></li>
+        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>MOSFET driver + PSU</span><span class="meta" style="opacity:.45">power</span></li>
+        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.2vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(14px,1vw)"><span>HX711 load cell</span><span class="meta" style="opacity:.45">weight</span></li>
+      </ul>
+      <div class="meta-row" data-anim><span>~¥550–700 BOM</span><span>·</span><span>145 × 544 × 145 mm</span><span>·</span><span>SolidWorks → print → wire</span></div>
     </div>
     <figure class="frame-img r-4x3 model-stage" data-anim style="margin-top:2vh">
       <div class="model-view" role="img" aria-label="3D render of the sip. drink mechanism"></div>
