@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MoodMixer · A Drink That Listens</title>
+<title>sip. · Four Pumps, One Good Cup</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -121,6 +121,12 @@
   .plat .nb{font-family:var(--serif-en);font-weight:700;font-size:3.2vw;letter-spacing:-.02em;line-height:1;font-feature-settings:"tnum"}
   .plat .sub{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.55;margin-top:.6vh}
   .plat .fill{font-family:var(--sans-zh);font-weight:300;font-size:2.4vw;opacity:.28;letter-spacing:-.01em;line-height:1}
+
+  /* ============ Drink rows（菜单行） ============ */
+  .drink-row{display:flex;flex-direction:column;gap:.3vh;border-bottom:1px solid rgba(127,127,127,.14);padding-bottom:1.1vh;font-family:var(--sans-zh)}
+  .drink-row:last-child{border-bottom:0}
+  .drink-row .dn{font-family:var(--serif-en);font-weight:600;font-size:max(14px,1.06vw);line-height:1.15}
+  .drink-row .dr{font-family:var(--mono);font-size:max(10px,.72vw);opacity:.72;letter-spacing:.03em;line-height:1.35}
 
   /* ============ Rowline（表格行） ============ */
   .rowline{display:grid;grid-template-columns:1fr 2fr 1fr;gap:2vw;padding:2.2vh 0;border-top:1px solid currentColor;align-items:center;border-color:rgba(127,127,127,.25)}
@@ -609,22 +615,22 @@
   <div class="video-scrim" aria-hidden="true"></div>
 
   <div class="chrome">
-    <div>MoodMixer · Speech-Emotion Drink Machine</div>
-    <div>Vol.01 · 2026</div>
+    <div>sip. · Four Pumps, One Good Cup</div>
+    <div>2026</div>
   </div>
 
   <div class="cover-side">
     <div class="kicker" data-anim>LingLam 3D · Demo Deck</div>
-    <h1 class="h-hero h-hero-en cover-title" data-anim>MoodMixer</h1>
-    <h2 class="cover-sub" data-anim>A drink that listens.</h2>
-    <p class="cover-lead" data-anim>Speak a few words. An AI reads the emotion in your voice, and the machine mixes and pours a drink built for that mood — measured to the millilitre.</p>
+    <h1 class="h-hero h-hero-en cover-title" data-anim>sip.</h1>
+    <h2 class="cover-sub" data-anim>Four pumps. One good cup.</h2>
+    <p class="cover-lead" data-anim>Twenty house drinks from four pumps — coffee, milk, black tea and coconut water. Every cup is 150 ml, mixed to order.</p>
     <div class="meta-row" data-anim>
-      <span>Speech-emotion recognition</span><span>·</span><span>4 ingredients</span><span>·</span><span>Arduino dispensing rig</span>
+      <span>20 drinks</span><span>·</span><span>4 pumps</span><span>·</span><span>150 ml every cup</span>
     </div>
   </div>
 
   <div class="foot">
-    <div>MoodMixer · A drink that listens</div>
+    <div>sip. · Four pumps, one good cup</div>
     <div>— 2026 —</div>
   </div>
 </section>
@@ -640,175 +646,180 @@
   <div class="frame" style="display:grid;gap:3.4vh;align-content:center;min-height:80vh">
     <div class="kicker" data-anim>The Premise</div>
     <blockquote style="font-family:var(--serif-en);font-weight:600;font-size:min(5.2vw,9vh);line-height:1.1;letter-spacing:-.02em;max-width:82vw">
-      <span data-anim="line" style="display:block">A menu asks what you want.</span>
-      <span data-anim="line" style="display:block;font-style:italic;opacity:.68">It never asks how you feel.</span>
+      <span data-anim="line" style="display:block">A vending machine pours what it has.</span>
+      <span data-anim="line" style="display:block;font-style:italic;opacity:.68">A good bar mixes what you want.</span>
     </blockquote>
-    <p class="lead" style="max-width:56ch;opacity:.8;margin-top:1vh" data-anim>MoodMixer closes that gap. Your voice already carries a mood — the machine just listens, then turns it into a recipe.</p>
-    <div class="meta-row" data-anim><span>Listen first</span><span>·</span><span>Then pour</span><span>·</span><span>No menu</span></div>
+    <p class="lead" style="max-width:56ch;opacity:.8;margin-top:1vh" data-anim>sip. sits in between. Four pumps, twenty house drinks, one fixed 150 ml cup — pick from the menu, or build your own in the Mix Lab.</p>
+    <div class="meta-row" data-anim><span>Menu</span><span>·</span><span>Mix Lab</span><span>·</span><span>No app</span></div>
   </div>
   <div class="foot">
     <div>02 · The Premise</div>
-    <div>Why we built it</div>
+    <div>Four pumps, twenty drinks</div>
   </div>
 </section>
 
 <!-- ============ 03 · THE IDEA ============ -->
 <section class="slide dark" data-slide-id="idea">
   <div class="chrome">
-    <div>The Idea · How it feels</div>
+    <div>The Idea · Four into twenty</div>
     <div>03 / 12</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:6vh">
     <div style="display:flex;flex-direction:column;gap:4vh">
       <div>
         <div class="kicker" data-anim>THE IDEA</div>
-        <h2 class="h-xl" style="font-size:min(5.6vw,9.6vh);line-height:1.05" data-anim>It hears how<br>you feel.</h2>
-        <p class="lead" style="margin-top:3vh;max-width:44ch" data-anim>You don't tap a menu. You say a few words. A speech-emotion model reads the tone — not the words — and picks one of four moods.</p>
-        <div class="meta-row" style="margin-top:3vh" data-anim><span>neutral</span><span>happy</span><span>angry</span><span>sad</span></div>
+        <h2 class="h-xl" style="font-size:min(5.6vw,9.6vh);line-height:1.05" data-anim>Four pumps.<br>Twenty drinks.</h2>
+        <p class="lead" style="margin-top:3vh;max-width:44ch" data-anim>Coffee, milk, black tea and coconut water — in the right ratios they cover a whole café counter, from a Long Black to a Coconut Yuanyang.</p>
+        <div class="meta-row" style="margin-top:3vh" data-anim><span>coffee</span><span>milk</span><span>black tea</span><span>coconut water</span></div>
       </div>
       <div class="callout" data-anim style="max-width:44ch">
-        "The input is a voice. The output is a drink."
-        <div class="callout-src">MoodMixer · end to end</div>
+        "Four pumps in. One good cup out."
+        <div class="callout-src">sip. · end to end</div>
       </div>
     </div>
     <figure class="frame-img r-16x10" data-anim style="margin-top:3vh">
-      <img src="images/03-mic.jpg" alt="Placeholder photo: a person speaking into a microphone at a cafe counter">
-      <figcaption class="img-cap">Voice in · mood out</figcaption>
+      <img src="images/06-drinks.jpg" alt="Placeholder photo: four drinks lined up on a cafe counter">
+      <figcaption class="img-cap">Four pumps · one counter</figcaption>
     </figure>
   </div>
   <div class="foot">
     <div>03 · The Idea</div>
-    <div>Tone over words</div>
+    <div>Ratios over recipes</div>
   </div>
 </section>
 
 <!-- ============ 04 · HOW IT WORKS ============ -->
 <section class="slide light" data-animate="pipeline" data-slide-id="how-it-works">
   <div class="chrome">
-    <div>The Pipeline · End to end</div>
+    <div>The Flow · Counter to cup</div>
     <div>04 / 12</div>
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker">How it works · 5 steps</div>
-    <h2 class="h-xl" style="font-size:min(5.2vw,9vh)">From voice to cup</h2>
-    <p class="lead" style="margin-top:2.2vh;max-width:58ch">A browser records, a FastAPI service classifies, and a recipe comes back in millilitres — ready for the Arduino.</p>
+    <h2 class="h-xl" style="font-size:min(5.2vw,9vh)">From counter to cup</h2>
+    <p class="lead" style="margin-top:2.2vh;max-width:58ch">Pick a house drink — or invent one. The order goes to the counter, comes back as a six-digit code, and four pumps pour exactly 150 ml.</p>
     <div class="pipeline-section" style="margin-top:3.4vh">
-      <div class="pipeline-label">Signal chain · sense → decide → pour</div>
+      <div class="pipeline-label">Order chain · browse → tune → order → code → pour</div>
       <div class="pipeline">
         <div class="step" data-anim="step">
           <div class="step-nb">01</div>
-          <div class="step-title">Speak</div>
-          <div class="step-desc">Record with the browser mic, or upload a voice clip.</div>
+          <div class="step-title">Browse</div>
+          <div class="step-desc">Twenty house drinks, or build your own in the Mix Lab.</div>
         </div>
         <div class="step" data-anim="step">
           <div class="step-nb">02</div>
-          <div class="step-title">Encode</div>
-          <div class="step-desc">Decode with soundfile, resample to 16 kHz mono.</div>
+          <div class="step-title">Tune</div>
+          <div class="step-desc">Strength, creaminess and sweetness dials keep the cup at 150 ml.</div>
         </div>
         <div class="step" data-anim="step">
           <div class="step-nb">03</div>
-          <div class="step-title">Classify</div>
-          <div class="step-desc">wav2vec2 returns the mood and confidence scores.</div>
+          <div class="step-title">Order</div>
+          <div class="step-desc">The counter confirms the order and issues a six-digit pickup code.</div>
         </div>
         <div class="step" data-anim="step">
           <div class="step-nb">04</div>
-          <div class="step-title">Recommend</div>
-          <div class="step-desc">The mood maps to a drink recipe in millilitres.</div>
+          <div class="step-title">Redeem</div>
+          <div class="step-desc">Enter the code at the station to unlock your cup.</div>
         </div>
         <div class="step" data-anim="step">
           <div class="step-nb">05</div>
           <div class="step-title">Pour</div>
-          <div class="step-desc">The Arduino opens valves; the load cell verifies.</div>
+          <div class="step-desc">Four pumps dispense 150 ml, millilitre by millilitre.</div>
         </div>
       </div>
     </div>
     <div class="rowline" style="margin-top:5vh" data-anim>
       <div class="k">Handoff</div>
-      <div class="v">The recipe returns as a small object of millilitres — the only contract between the AI and the machine.</div>
-      <div class="m">recipe.json</div>
+      <div class="v">The order is four pump volumes in millilitres — the only contract between the page and the pumps.</div>
+      <div class="m">pump1–4 · ml</div>
     </div>
   </div>
   <div class="foot">
     <div>04 · How it works</div>
-    <div>~2 s per classification</div>
+    <div>Order ahead · code at pickup</div>
   </div>
 </section>
 
 <!-- ============ 05 · ACT II DIVIDER ============ -->
 <section class="slide hero light" data-animate="hero" data-slide-id="the-mix">
   <div class="chrome">
-    <div>Act II · The Mix</div>
+    <div>Act II · The Pumps</div>
     <div>05 / 12</div>
   </div>
   <div class="frame" style="display:grid;gap:3.6vh;align-content:center;min-height:80vh">
-    <div class="kicker" data-anim>FOUR INGREDIENTS</div>
-    <h1 class="h-hero h-hero-en" style="font-size:min(7.2vw,12.6vh);line-height:.98;font-weight:800" data-anim>Four ingredients.<br>Four moods.<br>One cup.</h1>
-    <p class="lead" style="max-width:54ch;margin-top:1vh" data-anim>Jasmine green tea, Ceylon black tea, fresh milk, and sugarcane syrup — combined to the millilitre for each emotion.</p>
-    <div class="meta-row" data-anim><span style="font-family:var(--serif-zh)">茉莉綠茶</span><span>·</span><span style="font-family:var(--serif-zh)">錫蘭紅茶</span><span>·</span><span style="font-family:var(--serif-zh)">鮮奶</span><span>·</span><span style="font-family:var(--serif-zh)">蔗糖漿</span></div>
+    <div class="kicker" data-anim>FOUR PUMPS</div>
+    <h1 class="h-hero h-hero-en" style="font-size:min(7.2vw,12.6vh);line-height:.98;font-weight:800" data-anim>Four pumps.<br>Twenty drinks.<br>One good cup.</h1>
+    <p class="lead" style="max-width:54ch;margin-top:1vh" data-anim>Coffee, milk, black tea and coconut water — no sugar pump, no ice, no heat. Just the four liquids in the machine, combined to the millilitre.</p>
+    <div class="meta-row" data-anim><span style="font-family:var(--serif-zh)">咖啡</span><span>·</span><span style="font-family:var(--serif-zh)">牛奶</span><span>·</span><span style="font-family:var(--serif-zh)">紅茶</span><span>·</span><span style="font-family:var(--serif-zh)">椰子水</span></div>
   </div>
   <div class="foot">
-    <div>05 · The Mix</div>
+    <div>05 · The Pumps</div>
     <div>Act II</div>
   </div>
 </section>
 
-<!-- ============ 06 · RECIPES ============ -->
+<!-- ============ 06 · THE MENU ============ -->
 <section class="slide dark" data-slide-id="recipes">
   <div class="chrome">
-    <div>The Recipes · Emotion → mix</div>
+    <div>The Menu · Ratio → cup</div>
     <div>06 / 12</div>
   </div>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker" data-anim>FOUR MOODS, FOUR RECIPES</div>
-    <h2 class="h-xl" style="font-size:min(4.8vw,8.4vh)" data-anim>Mood in, recipe out.</h2>
+    <div class="kicker" data-anim>TWENTY DRINKS, FOUR PUMPS</div>
+    <h2 class="h-xl" style="font-size:min(4.8vw,8.4vh)" data-anim>One menu, four ratios.</h2>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.6vw;margin-top:3.4vh">
-      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh;min-height:23vh" data-anim>
-        <div class="meta" style="opacity:.6">HAPPY</div>
-        <h3 style="font-family:var(--serif-en);font-weight:700;font-size:min(2vw,3.6vh);line-height:1.05">Caramel<br>Milk Tea</h3>
-        <div style="font-family:var(--serif-zh);font-size:1.05vw;opacity:.66">焦糖鮮奶茶</div>
-        <div class="meta" style="opacity:.82;margin-top:auto;line-height:1.7">Ceylon 180<br>Milk 100 · Syrup 20</div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh" data-anim>
+        <div class="meta" style="opacity:.6">COFFEE · 7 DRINKS</div>
+        <div class="drink-row"><span class="dn">Long Black</span><span class="dr">100 coffee</span></div>
+        <div class="drink-row"><span class="dn">Flat White</span><span class="dr">40 coffee · 60 milk</span></div>
+        <div class="drink-row"><span class="dn">Café Latte</span><span class="dr">30 coffee · 70 milk</span></div>
+        <div class="drink-row"><span class="dn">Cappuccino</span><span class="dr">45 coffee · 55 milk</span></div>
+        <div class="drink-row"><span class="dn">Coffee Milk</span><span class="dr">50 coffee · 50 milk</span></div>
+        <div class="drink-row"><span class="dn">Coconut Americano</span><span class="dr">40 coffee · 60 coconut</span></div>
+        <div class="drink-row"><span class="dn">Coconut Latte</span><span class="dr">30 coffee · 35 milk · 35 coconut</span></div>
       </div>
-      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh;min-height:23vh" data-anim>
-        <div class="meta" style="opacity:.6">SAD</div>
-        <h3 style="font-family:var(--serif-en);font-weight:700;font-size:min(2vw,3.6vh);line-height:1.05">Comfort<br>Milk Green</h3>
-        <div style="font-family:var(--serif-zh);font-size:1.05vw;opacity:.66">暖心鮮奶綠</div>
-        <div class="meta" style="opacity:.82;margin-top:auto;line-height:1.7">Jasmine 160 · Milk 130<br>Syrup 10</div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh" data-anim>
+        <div class="meta" style="opacity:.6">TEA · 5 DRINKS</div>
+        <div class="drink-row"><span class="dn">Black Tea</span><span class="dr">100 tea</span></div>
+        <div class="drink-row"><span class="dn">HK Milk Tea</span><span class="dr">65 tea · 35 milk</span></div>
+        <div class="drink-row"><span class="dn">Tea Latte</span><span class="dr">55 tea · 45 milk</span></div>
+        <div class="drink-row"><span class="dn">Coconut Tea</span><span class="dr">55 tea · 45 coconut</span></div>
+        <div class="drink-row"><span class="dn">Coconut Milk Tea</span><span class="dr">50 tea · 25 milk · 25 coconut</span></div>
       </div>
-      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh;min-height:23vh" data-anim>
-        <div class="meta" style="opacity:.6">ANGRY</div>
-        <h3 style="font-family:var(--serif-en);font-weight:700;font-size:min(2vw,3.6vh);line-height:1.05">Calming<br>Jasmine Green</h3>
-        <div style="font-family:var(--serif-zh);font-size:1.05vw;opacity:.66">清心茉莉綠</div>
-        <div class="meta" style="opacity:.82;margin-top:auto;line-height:1.7">Jasmine 300<br>Nothing else</div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh" data-anim>
+        <div class="meta" style="opacity:.6">COCONUT · 2 DRINKS</div>
+        <div class="drink-row"><span class="dn">Pure Coconut Water</span><span class="dr">100 coconut</span></div>
+        <div class="drink-row"><span class="dn">Coco Cloud</span><span class="dr">60 coconut · 40 milk</span></div>
       </div>
-      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1vh;min-height:23vh" data-anim>
-        <div class="meta" style="opacity:.6">NEUTRAL</div>
-        <h3 style="font-family:var(--serif-en);font-weight:700;font-size:min(2vw,3.6vh);line-height:1.05">Classic<br>Ceylon Black</h3>
-        <div style="font-family:var(--serif-zh);font-size:1.05vw;opacity:.66">經典錫蘭紅</div>
-        <div class="meta" style="opacity:.82;margin-top:auto;line-height:1.7">Ceylon 300<br>Nothing else</div>
+      <div style="border-top:1px solid rgba(238,223,199,.4);padding-top:1.8vh;display:flex;flex-direction:column;gap:1.2vh" data-anim>
+        <div class="meta" style="opacity:.6">SIGNATURE · 6 DRINKS</div>
+        <div class="drink-row"><span class="dn">Yuanyang</span><span class="dr">50 tea · 30 coffee · 20 milk</span></div>
+        <div class="drink-row"><span class="dn">Coconut Yuanyang</span><span class="dr">35 tea · 25 coffee · 20 milk · 20 coconut</span></div>
+        <div class="drink-row"><span class="dn">Coffee Tea</span><span class="dr">50 coffee · 50 tea</span></div>
+        <div class="drink-row"><span class="dn">The Full House</span><span class="dr">25 of all four</span></div>
+        <div class="drink-row"><span class="dn">Night Shift</span><span class="dr">60 coffee · 20 milk · 20 tea</span></div>
+        <div class="drink-row"><span class="dn">Sunset Blend</span><span class="dr">35 coffee · 25 milk · 15 tea · 25 coconut</span></div>
       </div>
     </div>
-    <figure class="frame-img" data-anim style="height:23vh;margin-top:3.2vh">
-      <img src="images/06-drinks.jpg" alt="Placeholder photo: four drinks lined up on a cafe counter" style="object-position:center 54%">
-      <figcaption class="img-cap">Four base ingredients · one counter</figcaption>
-    </figure>
+    <div class="meta-row" style="margin-top:3.2vh" data-anim><span>1% = 1.5 ml</span><span>·</span><span>every cup is 150 ml</span><span>·</span><span>no sugar pump</span></div>
   </div>
   <div class="foot">
-    <div>06 · The Recipes</div>
-    <div>Measured in ml</div>
+    <div>06 · The Menu</div>
+    <div>Percentages, not moods</div>
   </div>
 </section>
 
 <!-- ============ 07 · PRECISION ============ -->
 <section class="slide hero dark" data-animate="hero" data-slide-id="precision">
   <div class="chrome">
-    <div>Precision · Load-cell feedback</div>
+    <div>Precision · One size</div>
     <div>07 / 12</div>
   </div>
   <div class="frame" style="display:grid;gap:4.2vh;align-content:center;min-height:80vh">
     <div class="kicker" data-anim>PRECISION</div>
-    <h1 class="h-hero h-hero-en" style="font-size:min(8.4vw,13.6vh);line-height:1" data-anim>It doesn't guess.<br><em>It weighs.</em></h1>
-    <p class="lead" style="max-width:52ch" data-anim>A 5 kg load cell closes the loop. Each valve opens until the target millilitres are in the cup — not a splash more.</p>
-    <div class="meta-row" data-anim><span>HX711</span><span>·</span><span>5 kg load cell</span><span>·</span><span>Closed-loop pouring</span></div>
+    <h1 class="h-hero h-hero-en" style="font-size:min(8.4vw,13.6vh);line-height:1" data-anim>150 ml.<br><em>Every time.</em></h1>
+    <p class="lead" style="max-width:52ch" data-anim>One size for every cup — 150 ml into a clean 200 ml cup. The payload is four pump volumes in millilitres, nothing more.</p>
+    <div class="meta-row" data-anim><span>one size</span><span>·</span><span>4 pump volumes</span><span>·</span><span>no sugar · no ice · no heat</span></div>
   </div>
   <div class="foot">
     <div>07 · Precision</div>
@@ -827,22 +838,22 @@
       <div>
         <div class="kicker" data-anim>UNDER THE HOOD</div>
         <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The rig.</h2>
-        <p class="lead" style="margin-top:2.2vh;max-width:44ch" data-anim>An Arduino Uno drives four food-grade solenoid valves. A 3D-printed drink mechanism sits at the heart, the turntable moves the cup, and the load cell keeps every pour honest.</p>
+        <p class="lead" style="margin-top:2.2vh;max-width:44ch" data-anim>Four food-grade pumps behind one counter — coffee, milk, black tea and coconut water. A 3D-printed drink mechanism sits at the heart, and the station runs from a local server that keeps physical control reserved.</p>
       </div>
       <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 2.4vw;margin-top:1.4vh" data-anim>
         <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.1vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(13px,.98vw)"><span>Arduino Uno</span><span class="meta" style="opacity:.45">ctrl</span></li>
-        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.1vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(13px,.98vw)"><span>4× 12V solenoid valves</span><span class="meta" style="opacity:.45">pour</span></li>
+        <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.1vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(13px,.98vw)"><span>4× food-grade pumps</span><span class="meta" style="opacity:.45">pour</span></li>
         <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.1vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(13px,.98vw)"><span>IRLZ44N + flyback diodes</span><span class="meta" style="opacity:.45">drive</span></li>
         <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.1vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(13px,.98vw)"><span>HX711 + 5 kg load cell</span><span class="meta" style="opacity:.45">sense</span></li>
         <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.1vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(13px,.98vw)"><span>NEMA17 + A4988 turntable</span><span class="meta" style="opacity:.45">move</span></li>
         <li style="border-top:1px solid rgba(42,30,19,.22);padding:1.1vh 0;display:flex;justify-content:space-between;gap:1vw;font-family:var(--sans-zh);font-size:max(13px,.98vw)"><span>12V 5A PSU + LM2596</span><span class="meta" style="opacity:.45">power</span></li>
       </ul>
-      <div class="meta-row" data-anim><span>4 valves</span><span>·</span><span>5 kg load cell</span><span>·</span><span>~¥550–700 BOM</span></div>
+      <div class="meta-row" data-anim><span>4 pumps</span><span>·</span><span>150 ml cups</span><span>·</span><span>~¥550–700 BOM</span></div>
       <div class="meta-row" data-anim style="margin-top:.4vh"><span>3D model</span><span>·</span><span>145 × 544 × 145 mm</span><span>·</span><span>STL</span></div>
     </div>
     <figure class="frame-img r-4x3 model-stage" data-anim style="margin-top:2vh">
       <div class="model-view">
-        <canvas id="drinkmech-canvas" aria-label="Interactive 3D model of the MoodMixer drink mechanism"></canvas>
+        <canvas id="drinkmech-canvas" aria-label="Interactive 3D model of the sip. drink mechanism"></canvas>
         <div class="model-badge">drinkMech_fin.STL · 35,405 tris</div>
         <div class="model-hint">Drag to orbit</div>
         <div class="model-fallback">3D view unavailable</div>
@@ -867,27 +878,27 @@
     <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>Four layers, one pour.</h2>
     <div style="margin-top:4vh">
       <div class="rowline" data-anim>
-        <div class="k">Model</div>
-        <div class="v"><em>superb/wav2vec2-base-superb-er</em> — a pre-trained wav2vec2 audio transformer, out of the box.</div>
-        <div class="m">4 emotions</div>
+        <div class="k">Customer page</div>
+        <div class="v">Single-page vanilla HTML / CSS / JS — the menu, the Mix Lab sliders, tune dials and the order-ahead flow. No app to install.</div>
+        <div class="m">menu + lab</div>
       </div>
       <div class="rowline" data-anim>
         <div class="k">Backend</div>
-        <div class="v">Python 3.13 · FastAPI · Uvicorn. One <span style="font-family:var(--mono);font-size:.9em">POST /predict</span> endpoint.</div>
-        <div class="m">/predict</div>
+        <div class="v">Python · FastAPI. One config feed plus <span style="font-family:var(--mono);font-size:.9em">/api/orders</span>, <span style="font-family:var(--mono);font-size:.9em">/api/dispense</span> and <span style="font-family:var(--mono);font-size:.9em">/api/chat</span>.</div>
+        <div class="m">/api/*</div>
       </div>
       <div class="rowline" data-anim>
-        <div class="k">Frontend</div>
-        <div class="v">Single-page vanilla HTML / CSS / JS — record in the browser or upload a clip.</div>
-        <div class="m">mic + upload</div>
+        <div class="k">Counter</div>
+        <div class="v">The counter confirms each order and issues a six-digit pickup code with a 10-minute lifetime.</div>
+        <div class="m">6-digit code</div>
       </div>
       <div class="rowline" data-anim>
-        <div class="k">Firmware</div>
-        <div class="v">Arduino maps millilitres to valve-open time; the load cell confirms the pour.</div>
+        <div class="k">Station</div>
+        <div class="v">A local server maps millilitres to pump run-time; the machine starts only after a valid code.</div>
         <div class="m">ml → ms</div>
       </div>
     </div>
-    <p class="lead" style="margin-top:4.4vh;max-width:66ch;opacity:.74" data-anim>Audio is decoded with <em>soundfile</em> and resampled to 16 kHz mono with <em>scipy</em> — exactly the input the model expects.</p>
+    <p class="lead" style="margin-top:4.4vh;max-width:66ch;opacity:.74" data-anim>Four pump volumes in millilitres — that is the entire payload from the page to the pumps.</p>
   </div>
   <div class="foot">
     <div>09 · Under the hood</div>
@@ -903,43 +914,43 @@
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker" data-anim>THE PITCH</div>
-    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>Why a mood, not a menu?</h2>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>Why twenty drinks, not two hundred?</h2>
     <div class="grid-3-3" style="margin-top:4vh;flex:1;align-content:start;gap:2.6vh 2.4vw">
       <div class="pillar" data-anim>
         <div class="ic">01</div>
-        <div class="t" style="font-size:1.9vw">Emotion-aware</div>
-        <div class="d">A drink matched to how you actually feel — not what you tap.</div>
+        <div class="t" style="font-size:1.9vw">Order ahead</div>
+        <div class="d">A six-digit pickup code beats a queue — pay at the counter, pour at the machine.</div>
       </div>
       <div class="pillar" data-anim>
         <div class="ic">02</div>
-        <div class="t" style="font-size:1.9vw">Zero-training</div>
-        <div class="d">A pre-trained state-of-the-art model, deployed with no dataset to collect.</div>
+        <div class="t" style="font-size:1.9vw">One size</div>
+        <div class="d">A fixed 150 ml cup keeps service fast and every pump predictable.</div>
       </div>
       <div class="pillar" data-anim>
         <div class="ic">03</div>
-        <div class="t" style="font-size:1.9vw">Hands-free</div>
-        <div class="d">Speak and it pours. No app, no menu, no screen to touch.</div>
+        <div class="t" style="font-size:1.9vw">Mix Lab</div>
+        <div class="d">Sliders rebalance the cup in real time — a drink for no menu at all.</div>
       </div>
       <div class="pillar" data-anim>
         <div class="ic">04</div>
-        <div class="t" style="font-size:1.9vw">Modular &amp; cheap</div>
-        <div class="d">Commodity parts and an open recipe system — easy to extend.</div>
+        <div class="t" style="font-size:1.9vw">Surprise me</div>
+        <div class="d">One tap picks a house drink and tunes it for you.</div>
       </div>
       <div class="pillar" data-anim>
         <div class="ic">05</div>
-        <div class="t" style="font-size:1.9vw">Novel experience</div>
-        <div class="d">A strong pull for cafes, pop-ups, events and vending.</div>
+        <div class="t" style="font-size:1.9vw">Four pumps</div>
+        <div class="d">Coffee, milk, black tea, coconut water — logistics stay simple.</div>
       </div>
       <div class="pillar" data-anim>
         <div class="ic">06</div>
-        <div class="t" style="font-size:1.9vw">Open recipes</div>
-        <div class="d">New ingredients and emotions are a config change, not a rebuild.</div>
+        <div class="t" style="font-size:1.9vw">No app</div>
+        <div class="d">The pickup code is the whole account system.</div>
       </div>
     </div>
   </div>
   <div class="foot">
     <div>10 · Why it matters</div>
-    <div>Personal, not procedural</div>
+    <div>Twenty drinks, no app</div>
   </div>
 </section>
 
@@ -951,38 +962,38 @@
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker" data-anim>FROM PROTOTYPE TO POUR</div>
-    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The software is done.<br>The pour is next.</h2>
-    <p class="lead" style="margin-top:2.4vh;max-width:60ch" data-anim>Classification and recipes already work end to end. The remaining work is turning millilitres into precise, repeatable pours.</p>
+    <h2 class="h-xl" style="font-size:min(5vw,8.6vh)" data-anim>The menu is live.<br>The machine is next.</h2>
+    <p class="lead" style="margin-top:2.4vh;max-width:60ch" data-anim>The public ordering page already runs — twenty drinks, orders and pickup codes. The remaining work is the physical pour and the barista chat.</p>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.8vw;margin-top:5vh">
       <div style="border-top:1px solid rgba(42,30,19,.28);padding-top:2vh" data-anim>
         <div class="meta" style="opacity:.55">NOW · 01</div>
-        <h3 style="font-family:var(--serif-zh);font-weight:700;font-size:1.7vw;margin:1.4vh 0">Wire the API</h3>
-        <p style="font-family:var(--sans-zh);font-size:max(13px,.95vw);line-height:1.55;opacity:.76">Map each recipe's millilitres to valve-open time and pour from the Arduino.</p>
+        <h3 style="font-family:var(--serif-zh);font-weight:700;font-size:1.7vw;margin:1.4vh 0">Pump integration</h3>
+        <p style="font-family:var(--sans-zh);font-size:max(13px,.95vw);line-height:1.55;opacity:.76">Wire the four pump volumes to the physical station and take it out of remote mode.</p>
       </div>
       <div style="border-top:1px solid rgba(42,30,19,.28);padding-top:2vh" data-anim>
         <div class="meta" style="opacity:.55">NEXT · 02</div>
-        <h3 style="font-family:var(--serif-zh);font-weight:700;font-size:1.7vw;margin:1.4vh 0">Close the loop</h3>
-        <p style="font-family:var(--sans-zh);font-size:max(13px,.95vw);line-height:1.55;opacity:.76">Use load-cell feedback to cut each valve at the target weight.</p>
+        <h3 style="font-family:var(--serif-zh);font-weight:700;font-size:1.7vw;margin:1.4vh 0">Barista chat</h3>
+        <p style="font-family:var(--sans-zh);font-size:max(13px,.95vw);line-height:1.55;opacity:.76">Connect flavour recommendations so a few words become a recipe.</p>
       </div>
       <div style="border-top:1px solid rgba(42,30,19,.28);padding-top:2vh" data-anim>
         <div class="meta" style="opacity:.55">LATER · 03</div>
-        <h3 style="font-family:var(--serif-zh);font-weight:700;font-size:1.7vw;margin:1.4vh 0">More moods</h3>
-        <p style="font-family:var(--sans-zh);font-size:max(13px,.95vw);line-height:1.55;opacity:.76">Expand beyond four emotions and add ingredients to the recipe set.</p>
+        <h3 style="font-family:var(--serif-zh);font-weight:700;font-size:1.7vw;margin:1.4vh 0">More drinks</h3>
+        <p style="font-family:var(--sans-zh);font-size:max(13px,.95vw);line-height:1.55;opacity:.76">Add recipes and categories without touching the pump hardware.</p>
       </div>
       <div style="border-top:1px solid rgba(42,30,19,.28);padding-top:2vh" data-anim>
         <div class="meta" style="opacity:.55">LATER · 04</div>
-        <h3 style="font-family:var(--serif-zh);font-weight:700;font-size:1.7vw;margin:1.4vh 0">Calibration</h3>
-        <p style="font-family:var(--sans-zh);font-size:max(13px,.95vw);line-height:1.55;opacity:.76">A self-tune mode for flow rates, so every bottle pours the same.</p>
+        <h3 style="font-family:var(--serif-zh);font-weight:700;font-size:1.7vw;margin:1.4vh 0">Counter tools</h3>
+        <p style="font-family:var(--sans-zh);font-size:max(13px,.95vw);line-height:1.55;opacity:.76">Faster code issuing, an order board and queue views for the counter.</p>
       </div>
     </div>
     <div style="margin-top:auto;border-top:1px solid rgba(42,30,19,.2);padding-top:2.2vh;display:flex;justify-content:space-between;align-items:baseline;gap:3vw" data-anim>
-      <div class="lead" style="max-width:60ch;opacity:.72">The first reliable pour is the milestone.</div>
+      <div class="lead" style="max-width:60ch;opacity:.72">The first real pour from a pickup code is the milestone.</div>
       <div class="meta">2026 · LingLam 3D</div>
     </div>
   </div>
   <div class="foot">
     <div>11 · What's next</div>
-    <div>Prototype → product</div>
+    <div>Menu → machine</div>
   </div>
 </section>
 
@@ -993,10 +1004,10 @@
     <div>12 / 12</div>
   </div>
   <div class="frame" style="display:grid;gap:3.4vh;align-content:center;min-height:80vh">
-    <div class="kicker" data-anim>MOODMIXER</div>
-    <h1 class="h-hero h-hero-en" style="font-size:min(8.8vw,14vh);line-height:1" data-anim>Speak.<br>Sip.<br>Repeat.</h1>
-    <p class="lead" style="max-width:48ch" data-anim>A drink matched to how you feel — an off-the-shelf model, four ingredients, and a load cell.</p>
-    <div class="meta-row" data-anim><span>github.com/Percy-the-train/moodmixer</span><span>·</span><span>LingLam 3D · 2026</span></div>
+    <div class="kicker" data-anim>SIP.</div>
+    <h1 class="h-hero h-hero-en" style="font-size:min(8.8vw,14vh);line-height:1" data-anim>Pick.<br>Sip.<br>Repeat.</h1>
+    <p class="lead" style="max-width:48ch" data-anim>Four pumps, twenty drinks, one 150 ml cup — ordered ahead and poured to the millilitre.</p>
+    <div class="meta-row" data-anim><span>eric-gong.com/sip</span><span>·</span><span>github.com/Percy-the-train/moodmixer</span><span>·</span><span>LingLam 3D · 2026</span></div>
   </div>
   <div class="foot">
     <div>12 · Thank you</div>
@@ -1012,135 +1023,135 @@
 <script>
 const SPEAKER_NOTES = [
   {
-    id: 'cover', title: 'MoodMixer — A drink that listens', section: 'Opening', minutes: 0.6,
-    purpose: 'Land the one-line idea before any technical detail.',
+    id: 'cover', title: 'sip. — Four pumps, one good cup', section: 'Opening', minutes: 0.6,
+    purpose: 'Land the one-line pitch before any detail.',
     talk: [
-      'Introduce it as a drink machine that reads mood from voice.',
-      'Keep it physical: four ingredients, a cup, an Arduino.',
-      'Tease the demo rather than explain the stack yet.'
+      'Introduce sip. as four pumps behind one counter.',
+      'Name the four: coffee, milk, black tea, coconut water.',
+      'Tease the twenty-drink menu and the fixed 150 ml cup.'
     ],
-    transition: 'Before showing how, explain the gap it fills.',
+    transition: 'Before showing the menu, explain the gap it fills.',
     cue: 'Let the video play once; it holds on the last frame. Gesture at the machine on the left.',
     delivery: 'Warm and unhurried - cafe energy, not a tech keynote.'
   },
   {
     id: 'premise', title: 'The Premise', section: 'Opening', minutes: 0.8,
-    purpose: 'Make the audience feel the missing link between menus and how people actually feel.',
+    purpose: 'Make the audience feel the gap between a vending machine and a real bar.',
     talk: [
-      'Menus capture preference, not mood.',
-      'A voice already carries that signal for free.',
-      'Frame MoodMixer as listening first, pouring second.'
+      'A vending machine can only pour what it stocks.',
+      'A good bar mixes around what you want.',
+      'sip. splits the difference: four pumps, twenty drinks, one size.'
     ],
-    transition: 'The next page makes the listening concrete.',
+    transition: 'The next page makes the four pumps concrete.',
     cue: 'Small pause after the second line of the quote.'
   },
   {
-    id: 'idea', title: 'It hears how you feel', section: 'The Idea', minutes: 1.0,
-    purpose: 'Establish the input and output of the experience.',
+    id: 'idea', title: 'Four pumps, twenty drinks', section: 'The Idea', minutes: 1.0,
+    purpose: 'Establish the input and output of the product.',
     talk: [
-      'The model reads tone, not transcript — no speech-to-text needed.',
-      'Four output moods: neutral, happy, angry, sad.',
+      'Coffee, milk, black tea and coconut water are the whole inventory.',
+      'The right ratios cover twenty house drinks.',
       'The callout is the whole product in one sentence.'
     ],
-    transition: 'Once the idea lands, walk the actual signal chain.',
-    cue: 'Point to the image slot; mention it will show a voice capture setup.'
+    transition: 'Once the idea lands, walk the actual order flow.',
+    cue: 'Point to the image; name each of the four liquids.'
   },
   {
-    id: 'how-it-works', title: 'From voice to cup', section: 'The Idea', minutes: 1.2,
-    purpose: 'Show that the system is end-to-end, not just a model demo.',
+    id: 'how-it-works', title: 'From counter to cup', section: 'The Idea', minutes: 1.2,
+    purpose: 'Show that the system is end-to-end, not just a menu.',
     talk: [
-      'Browser records or uploads; no native app required.',
-      'Audio is resampled to 16 kHz mono before inference.',
-      'The recipe comes back as millilitres, which is the Arduino handoff.'
+      'Browse the twenty-drink menu or build a cup in the Mix Lab.',
+      'The counter confirms the order and issues a six-digit code.',
+      'The station pours exactly 150 ml from four pump volumes.'
     ],
-    transition: 'The recipe is the bridge to the ingredients.',
+    transition: 'The ratios are the bridge to the drinks themselves.',
     cue: 'Advance the pipeline one step at a time with the arrow keys.',
     fallback: 'If the live demo is unavailable, describe the five steps from the slide.'
   },
   {
-    id: 'the-mix', title: 'Four ingredients', section: 'The Mix', minutes: 0.5,
+    id: 'the-mix', title: 'Four pumps', section: 'The Mix', minutes: 0.5,
     purpose: 'Reset attention and introduce the physical ingredient set.',
     talk: [
-      'Only four base liquids make every recipe.',
-      'Name them: jasmine green, Ceylon black, milk, sugarcane syrup.',
+      'Only four liquids make every drink.',
+      'Name them: coffee, milk, black tea, coconut water.',
       'The constraint is deliberate — fewer parts, more reliable pours.'
     ],
-    transition: 'Next, the exact mapping from mood to recipe.'
+    transition: 'Next, the exact mapping from ratio to cup.'
   },
   {
-    id: 'recipes', title: 'Mood in, recipe out', section: 'The Mix', minutes: 1.1,
-    purpose: 'Make the emotion-to-recipe mapping concrete and memorable.',
+    id: 'recipes', title: 'One menu, four ratios', section: 'The Mix', minutes: 1.1,
+    purpose: 'Make the twenty-drink menu concrete and memorable.',
     talk: [
-      'Happy goes sweet and milky; sad goes warm and comforting.',
-      'Angry stays clean and jasmine-only; neutral is classic black tea.',
-      'Read the millilitres as the interface between software and hardware.'
+      'Seven coffee drinks, five teas, two coconut, six signatures.',
+      'Read a few: Flat White 40/60, Yuanyang 30/20/50.',
+      'Every percentage is 1.5 ml — the cup never leaves 150 ml.'
     ],
     transition: 'Numbers only matter if the machine can hit them — hence precision.',
-    cue: 'Read the four drink names, then the ml lines.'
+    cue: 'Read the four category names, then a ratio or two.'
   },
   {
-    id: 'precision', title: 'It weighs', section: 'The Mix', minutes: 0.8,
+    id: 'precision', title: '150 ml, every time', section: 'The Mix', minutes: 0.8,
     purpose: 'Explain why the pour is trustworthy.',
     talk: [
-      'Open-loop valve timing drifts as bottles empty.',
-      'The load cell turns pouring into a closed-loop control problem.',
-      'This is the difference between a demo and a repeatable drink.'
+      'One size keeps service fast and the pumps predictable.',
+      'The payload is four pump volumes in millilitres.',
+      'Nothing else crosses from the page to the machine.'
     ],
     transition: 'That control loop lives in the hardware — show the rig.',
-    delivery: 'Slow down on “it weighs”.'
+    delivery: 'Slow down on "150 ml".'
   },
   {
     id: 'hardware', title: 'The rig', section: 'Hardware', minutes: 1.1,
     purpose: 'Prove the build is real, cheap, and modular.',
     talk: [
-      'Arduino Uno plus four valves is the core.',
+      'Four food-grade pumps are the core.',
       'The drink mechanism is a 3D-printed assembly — drinkMech_fin.STL.',
-      'MOSFETs and flyback diodes keep the 12V solenoids safe.',
-      'Turntable, load cell and power chain are all commodity parts.',
+      'The station runs from a local server; physical control stays reserved there.',
       'BOM lands around ¥550–700.'
     ],
-    transition: 'Hardware needs software — show how the four layers fit.',
+    transition: 'Hardware needs software — show how the layers fit.',
     cue: 'Drag the 3D model to show the mechanism, then point at the component list.'
   },
   {
     id: 'stack', title: 'Four layers, one pour', section: 'Hardware', minutes: 1.0,
     purpose: 'Give technical credibility without drowning the audience.',
     talk: [
-      'The model is pre-trained, so there is no dataset phase.',
-      'FastAPI exposes one predict endpoint.',
-      'Frontend is deliberately vanilla so it runs anywhere.',
-      'Firmware is the last layer and the next thing to wire.'
+      'The customer page is vanilla so it runs anywhere.',
+      'FastAPI exposes /api/orders, /api/dispense and /api/chat.',
+      'The counter issues six-digit pickup codes with a 10-minute lifetime.',
+      'The station starts only after a valid code.'
     ],
     transition: 'With the stack clear, explain why anyone should care.',
     fallback: 'Skip the API detail if the audience is non-technical.'
   },
   {
-    id: 'why', title: 'Why a mood, not a menu?', section: 'Value', minutes: 1.0,
+    id: 'why', title: 'Why twenty, not two hundred?', section: 'Value', minutes: 1.0,
     purpose: 'Convert the demo into a value proposition.',
     talk: [
-      'Personalisation is the headline: the drink matches the feeling.',
-      'The economics matter: cheap parts and an open recipe system.',
-      'The experience is the marketing — it is memorable to watch.'
+      'Order ahead: a code beats a queue.',
+      'One size keeps every pour fast and repeatable.',
+      'The Mix Lab makes it a drink for no menu at all.',
+      'Surprise me turns a refill into a small delight.'
     ],
     transition: 'Close by being honest about what is finished and what is not.',
-    interaction: 'Ask: would you trust a machine to read your mood?'
+    interaction: 'Ask: which of the twenty would you try first?'
   },
   {
     id: 'roadmap', title: "What's next", section: 'Close', minutes: 0.9,
     purpose: 'Set expectations and show a clear path to a working pour.',
     talk: [
-      'Software and recipes are already working.',
-      'The remaining work is the Arduino handoff and load-cell loop.',
-      'More moods and calibration come after the first reliable pour.'
+      'The public ordering page already runs end to end.',
+      'Next: pump integration and the barista chat.',
+      'More drinks and counter tools come after the first real pour.'
     ],
     transition: 'End on the experience, not the task list.'
   },
   {
-    id: 'closing', title: 'Speak. Sip. Repeat.', section: 'Close', minutes: 0.6,
+    id: 'closing', title: 'Pick. Sip. Repeat.', section: 'Close', minutes: 0.6,
     purpose: 'Leave a short, physical line in the room.',
     talk: [
       'Repeat the promise in three words.',
-      'Mention the repo for anyone who wants the code.',
+      'Mention the site and the repo.',
       'Invite them to try a drink if there is a live unit.'
     ],
     transition: 'No next page — hold for questions.',
